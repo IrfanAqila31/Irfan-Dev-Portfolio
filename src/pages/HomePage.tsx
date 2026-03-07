@@ -8,12 +8,12 @@ const HomePage = () => {
     <div>
       <section id="home" className="pt-42 pb-16 mx-auto text-center w-full">
         <div>
-          <h1 className="text-indigo-300">Halo Semua👋</h1>
-          <h2 className="text-slate-300 text-2xl mt-2 font-semibold">
+          <h1 className="text-indigo-300 md:text-lg">Halo Semua👋</h1>
+          <h2 className="text-slate-300 text-3xl mt-2 font-bold md:text-4xl lg:text-7xl">
             Saya Irfan Aqila Utama
           </h2>
-          <h3 className="text-slate-400 text-lg">Front End Developer</h3>
-          <p className="text-slate-400 mt-3">
+          <h3 className="text-slate-400 text-lg md:text-xl mt-2 lg:text-2xl">Front End Developer</h3>
+          <p className="text-slate-400 mt-3 lg:text-lg">
             Kode rapi, desain kece, tidur tetap berantakan. 😆
           </p>
           <div>

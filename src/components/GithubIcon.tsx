@@ -3,7 +3,7 @@ const GithubIcon = () => {
     <svg
       role="img"
       viewBox="0 0 24 24"
-      width={20}
+      width={25}
       xmlns="http://www.w3.org/2000/svg"
       className="fill-current"
     >
