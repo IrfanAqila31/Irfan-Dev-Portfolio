@@ -5,7 +5,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="w-full flex justify-center pt-2 px-4">
+    <nav className="w-full flex justify-center pt-2 px-4 fixed z-30">
       <div className="w-full max-w-5xl bg-gradient-to-r from-indigo-900 via-indigo-600 to-indigo-900 shadow-lg rounded-full px-7 py-3 flex items-center justify-between">
         
         {/* Logo */}

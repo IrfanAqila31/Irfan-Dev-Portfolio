@@ -6,7 +6,7 @@ import GithubIcon from "../components/GithubIcon";
 const HomePage = () => {
   return (
     <div>
-      <section id="home" className="pt-42 pb-16 mx-auto text-center w-full">
+      <section id="home" className="pt-50 pb-32 mx-auto text-center w-full">
         <div>
           <h1 className="text-indigo-300 md:text-lg">Halo Semua👋</h1>
           <h2 className="text-slate-300 text-3xl mt-2 font-bold md:text-4xl lg:text-7xl">
@@ -46,6 +46,7 @@ const HomePage = () => {
               <GithubIcon />
             </a>
           </div>
+          
         </div>
       </section>
     </div>

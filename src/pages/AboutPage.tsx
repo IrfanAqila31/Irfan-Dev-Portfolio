@@ -7,8 +7,8 @@ const AboutPage = () => {
         <div className="container mx-auto">
           <div className="w-full px-5">
             <div className="max-w-xl mx-auto text-center mb-16 ">
-              <h4 className="text-indigo-300 font-semibold">About Me</h4>
-              <h2 className="text-slate-300 text-lg">
+              <h4 className="text-indigo-300 font-semibold md:text-lg">About Me</h4>
+              <h2 className="text-slate-300 text-lg md:text-xl">
                 Sedang Menyusun Code dan Mimpi Bersamaan
               </h2>
             </div>
@@ -31,7 +31,7 @@ const AboutPage = () => {
               />
             </div>
             <div className="w-full px-5 md:w-1/2 ">
-              <p className="mt-5 text-slate-300 text-bas xl:max-w-xl">
+              <p className="mt-5 text-slate-300 text-sm md:text-base xl:max-w-xl">
                 Saya sedang menempuh perjalanan menjadi Front-End Developer yang
                 lebih mahir. Setiap hari saya belajar hal baru, mencoba berbagai
                 gaya desain, dan bereksperimen dengan warna serta elemen UI.

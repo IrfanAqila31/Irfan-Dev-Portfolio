@@ -2,6 +2,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import AboutPage from "./pages/AboutPage";
 import HomePage from "./pages/HomePage";
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <Navbar />
         <HomePage />
         <AboutPage />
+        <ProjectPage />
       </div>
     </>
   );
