@@ -1,6 +1,8 @@
 import "./App.css";
 import Navbar from "./components/Navbar";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import Footer from "./pages/Footer";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 
@@ -12,6 +14,8 @@ function App() {
         <HomePage />
         <AboutPage />
         <ProjectPage />
+        <ContactPage />
+        <Footer />
       </div>
     </>
   );

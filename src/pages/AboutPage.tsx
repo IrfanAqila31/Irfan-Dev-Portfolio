@@ -7,8 +7,10 @@ const AboutPage = () => {
         <div className="container mx-auto">
           <div className="w-full px-5">
             <div className="max-w-xl mx-auto text-center mb-16 ">
-              <h4 className="text-indigo-300 font-semibold md:text-lg">About Me</h4>
-              <h2 className="text-slate-300 text-lg md:text-xl">
+              <h4 className="text-indigo-500 font-bold md:text-3xl text-2xl lg:text-4xl mb-3">
+                About Me
+              </h4>
+              <h2 className="text-slate-300 text-sm md:text-xl">
                 Sedang Menyusun Code dan Mimpi Bersamaan
               </h2>
             </div>

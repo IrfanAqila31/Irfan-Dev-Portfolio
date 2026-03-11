@@ -7,7 +7,6 @@ export default function Navbar() {
   return (
     <nav className="w-full flex justify-center pt-2 px-4 fixed z-30">
       <div className="w-full max-w-5xl bg-gradient-to-r from-indigo-900 via-indigo-600 to-indigo-900 shadow-lg rounded-full px-7 py-3 flex items-center justify-between">
-        
         {/* Logo */}
         <div className="text-lg font-semibold text-slate-100">
           Irfan Aqila Utama
@@ -15,16 +14,28 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 font-medium text-slate-200">
-          <li className="hover:text-white transition duration-300 cursor-pointer">Home</li> 
-          <li className="hover:text-white transition duration-300 cursor-pointer">About Me</li>
-          <li className="hover:text-white transition duration-300 cursor-pointer">Project</li>
-          <li className="hover:text-white transition duration-300 cursor-pointer">Kontak</li>
+          <li className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#home">Home</a>
+          </li>
+          <li className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#about">About Me</a>
+          </li>
+          <li className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#project">Project</a>
+          </li>
+          <li className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
 
         {/* Mobile Button */}
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="text-white cursor-pointer" size={24} /> : <Menu className="text-white cursor-pointer" size={24} />}
+            {isOpen ? (
+              <X className="text-white cursor-pointer" size={24} />
+            ) : (
+              <Menu className="text-white cursor-pointer" size={24} />
+            )}
           </button>
         </div>
       </div>
@@ -33,10 +44,18 @@ export default function Navbar() {
       {isOpen && (
         <div className="absolute top-24 w-full max-w-5xl px-4 md:hidden">
           <div className="bg-gradient-to-r from-indigo-900 via-indigo-600 to-indigo-900 text-slate-200 shadow-lg rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
-            <span className="hover:text-white transition duration-300 cursor-pointer">Home</span>
-            <span className="hover:text-white transition duration-300 cursor-pointer">About Me</span>
-            <span className="hover:text-white transition duration-300 cursor-pointer">Project</span>
-            <span className="hover:text-white transition duration-300 cursor-pointer">Kontak</span>
+            <span className="hover:text-white transition duration-300 cursor-pointer">
+              <a href="#home">Home</a>
+            </span>
+            <span className="hover:text-white transition duration-300 cursor-pointer">
+              <a href="#about">About Me</a>
+            </span>
+            <span className="hover:text-white transition duration-300 cursor-pointer">
+              <a href="#project">Project</a>
+            </span>
+            <span className="hover:text-white transition duration-300 cursor-pointer">
+              <a href="#contact">Contact</a>
+            </span>
           </div>
         </div>
       )}
