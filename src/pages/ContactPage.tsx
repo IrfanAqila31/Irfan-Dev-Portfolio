@@ -19,13 +19,16 @@ const ContactPage = () => {
     };
 
     try {
-      await fetch("http://localhost:5000/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      await fetch(
+        "https://portfolio-backend-nine-henna.vercel.app/api/send-email",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         },
-        body: JSON.stringify(formData),
-      });
+      );
 
       alert("Pesan berhasil dikirim");
       form.reset();
@@ -116,7 +119,7 @@ const ContactPage = () => {
                   type="submit"
                   disabled={loading}
                   className={`mt-3 mb-20 bg-gradient-to-r from-indigo-500 to-indigo-700 px-10 py-3 rounded-full text-white transition font-medium duration-300
-  ${loading ? "opacity-50 cursor-not-allowed " : "hover:opacity-90"}`}
+                  ${loading ? "opacity-50 cursor-not-allowed " : "hover:opacity-90"}`}
                 >
                   {loading ? "Loading..." : "Hubungi Saya"}
                 </button>
