@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
+import personalWeb from "../assets/demo/personal-web.png";
 
 export interface ChromaItem {
   image: string;
@@ -39,7 +40,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const demo: ChromaItem[] = [
     {
-      image: "src/assets/demo/personal-web.png",
+      image: personalWeb,
       title: "Personal Portfolio",
       subtitle: "A showcase of my web development projects and skills.",
       handle: "",
@@ -47,7 +48,6 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://sahnanarc.github.io/Portofolio_Arc_One_Studio/",
     },
-   
   ];
 
   const data = items?.length ? items : demo;
