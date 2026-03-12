@@ -1,4 +1,40 @@
+import { useState } from "react";
+
 const ContactPage = () => {
+  const [loading, setLoading] = useState(false);
+  const sendEmail = async (e) => {
+    e.preventDefault();
+
+    // cegah double submit
+    if (loading) return;
+
+    setLoading(true);
+
+    const form = e.currentTarget;
+
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value,
+    };
+
+    try {
+      await fetch("http://localhost:5000/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      alert("Pesan berhasil dikirim");
+      form.reset();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       <section id="contact" className="pt-36 bg-transparent">
@@ -19,7 +55,7 @@ const ContactPage = () => {
             </div>
           </div>
 
-          <form id="form-email">
+          <form id="form-email" onSubmit={sendEmail}>
             <div className="w-full lg:w-1/2 lg:mx-auto">
               {/* Nama */}
               <div className="w-full px-4 mb-8">
@@ -78,9 +114,11 @@ const ContactPage = () => {
               <div className="w-full px-4 flex justify-center">
                 <button
                   type="submit"
-                  className="mt-3 mb-20 cursor-pointer bg-gradient-to-r from-indigo-500 to-indigo-700 px-10 py-3 rounded-full text-white hover:opacity-90 transition font-medium duration-300"
+                  disabled={loading}
+                  className={`mt-3 mb-20 bg-gradient-to-r from-indigo-500 to-indigo-700 px-10 py-3 rounded-full text-white transition font-medium duration-300
+  ${loading ? "opacity-50 cursor-not-allowed " : "hover:opacity-90"}`}
                 >
-                  Hubungi Saya
+                  {loading ? "Loading..." : "Hubungi Saya"}
                 </button>
               </div>
             </div>

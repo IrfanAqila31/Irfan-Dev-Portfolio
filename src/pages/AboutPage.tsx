@@ -37,7 +37,7 @@ const AboutPage = () => {
                 Saya sedang menempuh perjalanan menjadi Front-End Developer yang
                 lebih mahir. Setiap hari saya belajar hal baru, mencoba berbagai
                 gaya desain, dan bereksperimen dengan warna serta elemen UI.
-                Semakin dalam saya memahami kode, semakin besar ras penasaran
+                Semakin dalam saya memahami kode, semakin besar rasa penasaran
                 saya untuk menciptakan tampilan website yang menarik, modern,
                 dan mudah digunakan. Di luar dunia coding, saya adalah seorang
                 gamer yang suka menjelajahi berbagai dunia virtual dan
