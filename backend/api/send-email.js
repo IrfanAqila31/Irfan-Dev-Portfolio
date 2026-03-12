@@ -1,7 +1,18 @@
-// api/send-email.js
-import nodemailer from "nodemailer";
+import Cors from "cors";
+import initMiddleware from "./_init-middleware"; // helper, nanti saya jelaskan
+
+// initialize cors middleware
+const cors = initMiddleware(
+  Cors({
+    origin: "https://irfan-dev-portfolio.vercel.app", // frontend domain kamu
+    methods: ["POST", "OPTIONS"],
+  }),
+);
 
 export default async function handler(req, res) {
+  // jalankan cors
+  await cors(req, res);
+
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Method not allowed" });
   }
@@ -9,6 +20,7 @@ export default async function handler(req, res) {
   try {
     const { name, email, message } = req.body;
 
+    const nodemailer = require("nodemailer");
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
@@ -22,7 +34,7 @@ export default async function handler(req, res) {
       to: process.env.EMAIL_USER,
       replyTo: email,
       subject: `Pesan dari ${name}`,
-      text: message,
+      text: `Nama: ${name}\nEmail: ${email}\n\nPesan:\n${message}`,
     };
 
     await transporter.sendMail(mailOptions);
