@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import personalWeb from "../assets/demo/personal-web.png";
+import AI from "../assets/demo/AI.png";
 
 export interface ChromaItem {
   image: string;
@@ -47,6 +48,15 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://sahnanarc.github.io/Portofolio_Arc_One_Studio/",
+    },
+    {
+      image: AI,
+      title: "Lumina AI ",
+      subtitle: "AI chat application built with React, Typescript, dan Tailwind",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://ai-assistant-eight-taupe.vercel.app/",
     },
   ];
 
@@ -107,7 +117,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       ref={rootRef}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
+      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-5 ${className}`}
       style={
         {
           "--r": `${radius}px`,
