@@ -1,10 +1,10 @@
 import Cors from "cors";
-import initMiddleware from "./_init-middleware"; // helper, nanti saya jelaskan
+import initMiddleware from "./_init-middleware"; 
 
 // initialize cors middleware
 const cors = initMiddleware(
   Cors({
-    origin: "https://irfan-dev-portfolio.vercel.app", // frontend domain kamu
+    origin: "https://irfan-dev-portfolio.vercel.app", // frontend domain
     methods: ["POST", "OPTIONS"],
   }),
 );
