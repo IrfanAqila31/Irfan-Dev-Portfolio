@@ -3,7 +3,7 @@ import ChromaGrid from "../components/ChromaGrid";
 const ProjectPage = () => {
   return (
     <>
-      <section id="project" className="pt-30 pb-28">
+      <section id="project" className="pt-26 pb-26">
         <div className="container mx-auto">
           <div className="w-full px-5">
             <div className="max-w-xl mx-auto text-center mb-16 ">

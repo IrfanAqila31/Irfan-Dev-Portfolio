@@ -40,7 +40,7 @@ const ContactPage = () => {
   };
   return (
     <>
-      <section id="contact" className="pt-36 bg-transparent">
+      <section id="contact" className="pt-26 bg-transparent">
         <div className="container mx-auto">
           <div className="w-full px-5">
             <div className="max-w-xl mx-auto text-center mb-16">
@@ -118,7 +118,7 @@ const ContactPage = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className={`mt-3 mb-20 bg-gradient-to-r from-indigo-500 to-indigo-700 px-10 py-3 rounded-full text-white transition font-medium duration-300
+                  className={`mt-3 mb-20 bg-linear-to-r from-indigo-500 to-indigo-700 px-10 py-3 rounded-full text-white transition font-medium duration-300
                   ${loading ? "opacity-50 cursor-not-allowed " : "hover:opacity-90"}`}
                 >
                   {loading ? "Loading..." : "Hubungi Saya"}

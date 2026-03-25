@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import personalWeb from "../assets/demo/personal-web.png";
 import AI from "../assets/demo/AI.png";
+import SaaS from "../assets/demo/saaS landingPage.png";
 
 export interface ChromaItem {
   image: string;
@@ -50,9 +51,19 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: "https://sahnanarc.github.io/Portofolio_Arc_One_Studio/",
     },
     {
+      image: SaaS,
+      title: "SaaS Landing Page",
+      subtitle: "Clean and responsive SaaS landing page with modern UI desi",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://sass-landing-page-wine.vercel.app/",
+    },
+    {
       image: AI,
       title: "Lumina AI ",
-      subtitle: "AI chat application built with React, Typescript, dan Tailwind",
+      subtitle:
+        "AI chat application built with React, Typescript, dan Tailwind",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
