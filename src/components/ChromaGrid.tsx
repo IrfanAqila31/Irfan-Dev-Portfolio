@@ -158,13 +158,27 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                 "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
             }}
           />
-          <div className="relative z-10 flex-1 p-[10px] box-border">
-            <img
-              src={c.image}
-              alt={c.title}
-              loading="lazy"
-              className="w- h-full object-cover rounded-[10px]"
-            />
+          <div className="relative z-10 w-full p-4 pb-0 box-border">
+            {/* Browser / Device Mockup */}
+            <div className="w-full rounded-lg overflow-hidden border border-slate-700/50 bg-slate-900 shadow-2xl group-hover:-translate-y-1 transition-transform duration-300">
+              {/* Browser Header (Mac style dots) */}
+              <div className="flex items-center px-2.5 py-1.5 bg-slate-800/80 border-b border-slate-700/50">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
+                </div>
+              </div>
+              {/* Image Frame */}
+              <div className="relative w-full aspect-4/3 bg-slate-950">
+                <img
+                  src={c.image}
+                  alt={c.title}
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                />
+              </div>
+            </div>
           </div>
           <footer className="relative z-10 p-3 text-white font-sans">
             <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
@@ -197,7 +211,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       />
       <div
         ref={fadeRef}
-        className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-250 z-40"
         style={{
           backdropFilter: "grayscale(1) brightness(0.78)",
           WebkitBackdropFilter: "grayscale(1) brightness(0.78)",

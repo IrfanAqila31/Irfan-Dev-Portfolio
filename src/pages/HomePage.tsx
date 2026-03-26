@@ -6,7 +6,7 @@ import TechMarquee from "../components/TechMarquee";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="w-full">
       <section
         id="home"
         className="relative pt-50 pb-32 mx-auto text-center w-full"

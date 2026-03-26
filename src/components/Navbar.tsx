@@ -13,7 +13,7 @@ export default function Navbar() {
         onClick={() => setIsOpen(false)}
       ></div>
 
-      <div className="w-full max-w-5xl bg-linear-to-r from-indigo-900 via-indigo-600 to-indigo-900 shadow-lg rounded-full px-7 py-3 flex items-center justify-between">
+      <div className="w-full max-w-5xl bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 shadow-2xl shadow-indigo-500/10 rounded-full px-7 py-3 flex items-center justify-between transition-all duration-300">
         {/* Logo */}
         <div className="text-lg font-semibold text-slate-100">
           Irfan Aqila Utama
@@ -62,7 +62,7 @@ export default function Navbar() {
             : "-translate-y-6 scale-95 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-linear-to-r from-indigo-900 via-indigo-600 to-indigo-900 text-slate-200 shadow-lg rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
+        <div className="bg-slate-900/80 backdrop-blur-2xl border border-slate-700/50 text-slate-200 shadow-2xl shadow-indigo-500/10 rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#home" onClick={() => setIsOpen(false)}>
               Home
