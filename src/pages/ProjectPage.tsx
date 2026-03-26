@@ -7,7 +7,7 @@ const ProjectPage = () => {
         <div className="container mx-auto">
           <div className="w-full px-5">
             <div className="max-w-xl mx-auto text-center mb-16 ">
-              <h4 className="text-indigo-500 font-bold text-2xl md:text-3xl lg:text-4xl mb-3">
+              <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold text-2xl md:text-3xl lg:text-4xl mb-3 inline-block">
                 Portfolio
               </h4>
               <p className="font-medium text-sm md:text-lg text-slate-400">

@@ -9,8 +9,8 @@ const HomePage = () => {
     <div>
       <section id="home" className="relative pt-50 pb-32 mx-auto text-center w-full">
         <div className="px-5">
-          <h1 className="text-indigo-300 md:text-lg">Halo Semua👋</h1>
-          <h2 className="text-slate-300 text-3xl mt-2 font-bold md:text-4xl lg:text-7xl">
+          <h1 className="text-indigo-300 md:text-lg animate-bounce">Halo Semua span👋</h1>
+          <h2 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-2 text-3xl mt-1 font-bold md:text-4xl lg:text-7xl">
             Saya Irfan Aqila Utama
           </h2>
           <h3 className="text-slate-400 text-lg md:text-xl mt-2 lg:text-2xl">

@@ -1,12 +1,19 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <nav className="w-full flex justify-center pt-2 px-4 fixed z-30">
-      <div className="w-full max-w-5xl bg-gradient-to-r from-indigo-900 via-indigo-600 to-indigo-900 shadow-lg rounded-full px-7 py-3 flex items-center justify-between">
+      {/* Layar transparan (Overlay) untuk  menangkap klik di luar menu */}
+      <div
+        className={`fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-500 md:hidden -z-10 ${
+          isOpen ? "opacity-80 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setIsOpen(false)}
+      ></div>
+
+      <div className="w-full max-w-5xl bg-linear-to-r from-indigo-900 via-indigo-600 to-indigo-900 shadow-lg rounded-full px-7 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="text-lg font-semibold text-slate-100">
           Irfan Aqila Utama
@@ -30,35 +37,54 @@ export default function Navbar() {
 
         {/* Mobile Button */}
         <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? (
-              <X className="text-white cursor-pointer" size={24} />
-            ) : (
-              <Menu className="text-white cursor-pointer" size={24} />
-            )}
+          <button
+            className="flex flex-col justify-center items-center gap-1.5 w-8 h-8 cursor-pointer focus:outline-none"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <span
+              className={`block w-6 h-0.5 bg-white rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isOpen ? "rotate-45 translate-y-2" : ""}`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-white rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isOpen ? "opacity-0 translate-x-3 scale-x-50" : ""}`}
+            ></span>
+            <span
+              className={`block w-6 h-0.5 bg-white rounded-full transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] ${isOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            ></span>
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="absolute top-24 w-full max-w-5xl px-4 md:hidden">
-          <div className="bg-gradient-to-r from-indigo-900 via-indigo-600 to-indigo-900 text-slate-200 shadow-lg rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
-            <span className="hover:text-white transition duration-300 cursor-pointer">
-              <a href="#home">Home</a>
-            </span>
-            <span className="hover:text-white transition duration-300 cursor-pointer">
-              <a href="#about">About Me</a>
-            </span>
-            <span className="hover:text-white transition duration-300 cursor-pointer">
-              <a href="#project">Project</a>
-            </span>
-            <span className="hover:text-white transition duration-300 cursor-pointer">
-              <a href="#contact">Contact</a>
-            </span>
-          </div>
+      <div
+        className={`absolute top-24 w-full max-w-5xl px-4 md:hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] origin-top ${
+          isOpen
+            ? "translate-y-0 scale-100 opacity-100 pointer-events-auto"
+            : "-translate-y-6 scale-95 opacity-0 pointer-events-none"
+        }`}
+      >
+        <div className="bg-linear-to-r from-indigo-900 via-indigo-600 to-indigo-900 text-slate-200 shadow-lg rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
+          <span className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#home" onClick={() => setIsOpen(false)}>
+              Home
+            </a>
+          </span>
+          <span className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#about" onClick={() => setIsOpen(false)}>
+              About Me
+            </a>
+          </span>
+          <span className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#project" onClick={() => setIsOpen(false)}>
+              Project
+            </a>
+          </span>
+          <span className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#contact" onClick={() => setIsOpen(false)}>
+              Contact
+            </a>
+          </span>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
