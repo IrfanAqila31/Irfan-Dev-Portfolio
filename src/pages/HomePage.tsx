@@ -3,6 +3,7 @@ import LinkedinIcon from "../components/LinkedinIcon";
 import InatagramIcon from "../components/InstagramIcon";
 import GithubIcon from "../components/GithubIcon";
 import TechMarquee from "../components/TechMarquee";
+import { TypeAnimation } from "react-type-animation";
 
 const HomePage = () => {
   return (
@@ -18,8 +19,22 @@ const HomePage = () => {
           <h2 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-2 text-3xl mt-1 font-bold md:text-4xl lg:text-7xl">
             Saya Irfan Aqila Utama
           </h2>
+          {/* Typing Animation */}
           <h3 className="text-slate-400 text-lg md:text-xl mt-2 lg:text-2xl">
-            Front End Developer
+            <TypeAnimation
+              sequence={[
+                "Junior Front End Developer",
+                2000,
+                "Fresh Graduate 🎓",
+                2000,
+                "Always Learning 📚",
+                2000,
+              ]}
+              wrapper="span"
+              speed={50}
+              deletionSpeed={60}
+              repeat={Infinity}
+            />
           </h3>
           <p className="text-slate-400 mt-3 lg:text-lg">
             Kode rapi, desain kece, tidur tetap berantakan. 😆
