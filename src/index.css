@@ -99,3 +99,21 @@ body {
 .animate-aurora-2 { animation: aurora-2 15s ease-in-out infinite; }
 .animate-aurora-3 { animation: aurora-3 18s ease-in-out infinite; }
 .animate-aurora-4 { animation: aurora-4 10s ease-in-out infinite; }
+
+
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input:-webkit-autofill {
+  -webkit-text-fill-color: #cbd5e1;
+  caret-color: #6366f1;
+}
+

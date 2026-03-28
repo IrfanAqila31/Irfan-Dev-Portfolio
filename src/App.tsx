@@ -5,6 +5,8 @@ import ContactPage from "./pages/ContactPage";
 import Footer from "./pages/Footer";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
+import Services from "./components/Services";
+import Faq from "./components/Faq";
 
 function App() {
   return (
@@ -21,7 +23,9 @@ function App() {
         <Navbar />
         <HomePage />
         <AboutPage />
+        <Services />
         <ProjectPage />
+        <Faq />
         <ContactPage />
         <Footer />
       </div>

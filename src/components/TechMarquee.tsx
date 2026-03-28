@@ -6,6 +6,7 @@ import ts from "../assets/typescript.svg";
 import tailwind from "../assets/tailwind.svg";
 import bootstrap from "../assets/Bootstrap.svg";
 import figma from "../assets/figma.svg";
+import vite from "../assets/vite.svg";
 
 const icons = [
   { name: "HTML5", src: html },
@@ -22,6 +23,7 @@ const icons = [
   },
   { name: "Bootstrap", src: bootstrap },
   { name: "Figma", src: figma },
+  { name: "Vite", src: vite },
 ];
 
 const TechMarquee = () => {
@@ -72,7 +74,10 @@ const TechMarquee = () => {
           </div>
 
           {/* Icon 2*/}
-          <div className="flex flex-none gap-16 px-8 items-center" aria-hidden="true">
+          <div
+            className="flex flex-none gap-16 px-8 items-center"
+            aria-hidden="true"
+          >
             {[...icons, ...icons, ...icons, ...icons].map((icon, index) => (
               <div
                 key={`icon2-${index}`}

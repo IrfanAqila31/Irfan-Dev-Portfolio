@@ -28,7 +28,13 @@ export default function Navbar() {
             <a href="#about">About Me</a>
           </li>
           <li className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#services">Services</a>
+          </li>
+          <li className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#project">Project</a>
+          </li>
+          <li className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#faq">FAQ</a>
           </li>
           <li className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#contact">Contact</a>
@@ -74,8 +80,18 @@ export default function Navbar() {
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#services" onClick={() => setIsOpen(false)}>
+              Services
+            </a>
+          </span>
+          <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#project" onClick={() => setIsOpen(false)}>
               Project
+            </a>
+          </span>
+          <span className="hover:text-white transition duration-300 cursor-pointer">
+            <a href="#faq" onClick={() => setIsOpen(false)}>
+              FAQ
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
