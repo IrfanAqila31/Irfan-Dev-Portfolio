@@ -3,19 +3,23 @@ import { useState } from "react";
 const faqs = [
   {
     question: "Apakah Anda menerima tawaran freelance?",
-    answer: "Ya, saya sangat terbuka untuk proyek freelance, baik itu membangun website baru dari nol atau mengembangkan fitur baru pada website yang sudah ada.",
+    answer:
+      "Ya, saya sangat terbuka untuk proyek freelance, baik itu membangun website baru dari nol atau mengembangkan fitur baru pada website yang sudah ada.",
   },
   {
     question: "Apa tech stack utama yang Anda gunakan?",
-    answer: "Fokus utama saya saat ini adalah React.js Ecosystem, termasuk Tailwind CSS untuk styling dan Git untuk version control. Saya selalu haus akan teknologi baru seperti Next.js atau TypeScript.",
+    answer:
+      "Fokus utama saya saat ini adalah React.js Ecosystem, termasuk Tailwind CSS untuk styling dan Git untuk version control. Saya selalu haus akan teknologi baru seperti Next.js atau TypeScript.",
   },
   {
     question: "Berapa lama waktu pembuatan website?",
-    answer: "Tergantung pada kompleksitasnya. Untuk Landing Page sederhana biasanya memakan waktu 3-7 hari, sementara website modular yang lebih kompleks bisa 2-4 minggu.",
+    answer:
+      "Tergantung pada kompleksitasnya. Untuk Landing Page sederhana biasanya memakan waktu 3-7 hari, sementara website modular yang lebih kompleks bisa 2-4 minggu.",
   },
   {
     question: "Bagaimana cara mulai berkolaborasi?",
-    answer: "Anda cukup mengisi form pada bagian contact atau langsung menghubungi saya melalui email/LinkedIn. Kita bisa mulai dengan obrolan ringan tentang kebutuhan Anda.",
+    answer:
+      "Anda cukup mengisi form pada bagian contact atau langsung menghubungi saya melalui Email/WhatsApp. Kita bisa mulai dengan obrolan ringan tentang kebutuhan Anda.",
   },
 ];
 
@@ -40,37 +44,52 @@ const Faq = () => {
             <div
               key={idx}
               className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
-                activeIndex === idx 
-                ? "bg-slate-800/60 border-indigo-500/50 shadow-2xl" 
-                : "bg-slate-900/40 border-slate-700/50 hover:border-slate-600"
+                activeIndex === idx
+                  ? "bg-slate-800/60 border-indigo-500/50 shadow-2xl"
+                  : "bg-slate-900/40 border-slate-700/50 hover:border-slate-600"
               }`}
             >
               <button
                 onClick={() => toggleFaq(idx)}
                 className="w-full p-6 text-left flex justify-between items-center gap-4 group"
               >
-                <span className={`font-semibold md:text-lg transition-colors duration-300 ${
-                  activeIndex === idx ? "text-indigo-400" : "text-slate-100"
-                }`}>
+                <span
+                  className={`font-semibold md:text-lg transition-colors duration-300 ${
+                    activeIndex === idx ? "text-indigo-400" : "text-slate-100"
+                  }`}
+                >
                   {faq.question}
                 </span>
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-500 ${
-                  activeIndex === idx 
-                  ? "bg-indigo-500 border-indigo-500 rotate-180" 
-                  : "border-slate-700 group-hover:border-indigo-500"
-                }`}>
-                  <svg 
-                    width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"
-                    className={activeIndex === idx ? "text-white" : "text-indigo-500"}
+                <div
+                  className={`w-8 h-8 rounded-full flex items-center justify-center border transition-all duration-500 ${
+                    activeIndex === idx
+                      ? "bg-indigo-500 border-indigo-500 rotate-180"
+                      : "border-slate-700 group-hover:border-indigo-500"
+                  }`}
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className={
+                      activeIndex === idx ? "text-white" : "text-indigo-500"
+                    }
                   >
                     <path d="M6 9l6 6 6-6" />
                   </svg>
                 </div>
               </button>
-              
-              <div 
+
+              <div
                 className={`transition-all duration-500 ease-in-out ${
-                  activeIndex === idx ? "max-h-96 opacity-100 py-6" : "max-h-0 opacity-0 py-0"
+                  activeIndex === idx
+                    ? "max-h-96 opacity-100 py-6"
+                    : "max-h-0 opacity-0 py-0"
                 } px-6 border-t border-slate-700/30 text-slate-400 leading-relaxed text-sm md:text-base`}
               >
                 {faq.answer}
