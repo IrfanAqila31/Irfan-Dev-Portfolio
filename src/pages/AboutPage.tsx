@@ -78,12 +78,12 @@ const AboutPage = () => {
                 <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-emerald-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center">
                   <div className="absolute -top-6 -left-6 w-24 h-24 bg-emerald-500/10 blur-2xl rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500"></div>
                   <h3 className="text-lg font-semibold text-slate-100 mb-2 flex items-center gap-2">
-                    <span className="text-emerald-400">📍</span> Based in
+                    <span className="text-emerald-400">📍</span> Location
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed font-medium">
-                    Indonesia. <br />
+                    Lombok Tengah, Nusa Tenggara Barat, Indonesia <br />
                     <span className="font-normal opacity-80">
-                      Siap berkolaborasi mendunia.
+                      Siap kerja dari mana aja
                     </span>
                   </p>
                 </div>

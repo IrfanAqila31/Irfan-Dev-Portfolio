@@ -81,7 +81,7 @@ const ContactPage = () => {
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Irfan"
+                    placeholder="Masukkan Nama Anda"
                     required
                     className="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all duration-300 shadow-inner"
                   />
@@ -99,7 +99,7 @@ const ContactPage = () => {
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="irfan@example.com"
+                    placeholder="Masukkan Email Anda"
                     required
                     className="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all duration-300 shadow-inner"
                   />
@@ -116,7 +116,7 @@ const ContactPage = () => {
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Halo Irfan, saya tertarik berdiskusi mengenai proyek kolaborasi..."
+                    placeholder="Masukkan Pesan Anda"
                     required
                     className="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all duration-300 h-36 resize-none shadow-inner"
                   ></textarea>
