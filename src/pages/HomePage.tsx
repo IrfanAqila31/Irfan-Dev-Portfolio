@@ -1,4 +1,4 @@
-import Button from "../components/Button";
+// import Button from "../components/Button"; // Diubah untuk dua tombol langsung di bawah
 import LinkedinIcon from "../components/LinkedinIcon";
 import InatagramIcon from "../components/InstagramIcon";
 import GithubIcon from "../components/GithubIcon";
@@ -36,14 +36,35 @@ const HomePage = () => {
               repeat={Infinity}
             />
           </h3>
-          <p className="text-slate-400 mt-3 lg:text-lg">
+          <p className="text-slate-400 mt-3 lg:text-lg mb-8">
             Kode rapi, desain kece, tidur tetap berantakan. 😆
           </p>
-          <div>
-            <Button />
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+            {/* Tombol Hubungi Saya */}
+            <a
+              href="https://wa.me/6287795528998"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto bg-linear-to-r from-indigo-700 to-indigo-900 hover:from-indigo-600 hover:to-indigo-800 px-8 py-3 rounded-full text-white transition font-medium duration-300 lg:text-md shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2"
+            >
+              <span>💬</span> Hubungi Saya
+            </a>
+            
+            {/* Tombol Download CV */}
+            {/* Pastikan file CV Anda ditaruh di folder /public dengan nama yang sesuai */}
+            <a
+              href="/CV-Irfan-Aqila-Utama.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto px-8 py-3 rounded-full text-slate-300 border border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2"
+            >
+              <span>📄</span> Download CV
+            </a>
           </div>
 
-          <div className="flex items-center justify-center gap-4">
+          <div className="flex items-center justify-center gap-4 mt-2">
             {/*LinkedIn */}
 
             <a

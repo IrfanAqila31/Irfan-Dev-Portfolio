@@ -4,6 +4,8 @@ import avatar from "../assets/saya.png";
 import { GitHubCalendar } from "react-github-calendar";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import TechStackGrid from "../components/TechStackGrid";
+import Timeline from "../components/Timeline";
 
 const AboutPage = () => {
   const formatReadableDate = (dateString: string) => {
@@ -134,6 +136,20 @@ const AboutPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        
+        {/* Tech Stack Grid Section */}
+        <div className="container mx-auto">
+          <div className="px-5 mt-16 max-w-6xl mx-auto">
+            <TechStackGrid />
+          </div>
+        </div>
+        
+        {/* Experience & Education Timeline Section */}
+        <div className="container mx-auto">
+          <div className="px-5 max-w-4xl mx-auto">
+            <Timeline />
           </div>
         </div>
       </section>
