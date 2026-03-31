@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import AboutPage from "./pages/AboutPage";
@@ -7,8 +10,18 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import Services from "./components/Services";
 import Faq from "./components/Faq";
+import FloatingWA from "./components/FloatingWA";
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      once: false,
+      mirror: true,
+      duration: 800,
+      offset: 100,
+    });
+  }, []);
+
   return (
     <div className="relative min-h-screen bg-slate-950 w-full overflow-x-hidden text-slate-300 flex flex-col items-center">
       {/* Background Mesh Global */}
@@ -28,6 +41,7 @@ function App() {
         <Faq />
         <ContactPage />
         <Footer />
+        <FloatingWA />
       </div>
     </div>
   );

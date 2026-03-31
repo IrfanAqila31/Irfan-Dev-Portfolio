@@ -33,7 +33,7 @@ const Faq = () => {
   return (
     <section id="faq" className="pt-20 pb-32 bg-transparent">
       <div className="container mx-auto px-5 max-w-4xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold text-2xl md:text-3xl lg:text-4xl mb-3 inline-block">
             Frequently Asked Questions
           </h4>
@@ -48,6 +48,8 @@ const Faq = () => {
                   ? "bg-slate-800/60 border-indigo-500/50 shadow-2xl"
                   : "bg-slate-900/40 border-slate-700/50 hover:border-slate-600"
               }`}
+              data-aos="fade-up"
+              data-aos-delay={idx * 100}
             >
               <button
                 onClick={() => toggleFaq(idx)}

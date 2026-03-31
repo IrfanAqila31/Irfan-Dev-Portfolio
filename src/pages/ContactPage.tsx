@@ -44,7 +44,7 @@ const ContactPage = () => {
       <section id="contact" className="pt-26 bg-transparent">
         <div className="container mx-auto">
           <div className="w-full px-5">
-            <div className="max-w-xl mx-auto text-center mb-16">
+            <div className="max-w-xl mx-auto text-center mb-16" data-aos="fade-up">
               <div>
                 <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold text-2xl md:text-3xl lg:text-4xl mb-3 inline-block">
                   Contact
@@ -63,6 +63,8 @@ const ContactPage = () => {
             id="form-email"
             onSubmit={sendEmail}
             className="relative z-10 w-full lg:w-1/2 lg:mx-auto mb-20 px-5 lg:px-0"
+            data-aos="zoom-in"
+            data-aos-delay="200"
           >
             <div className="p-8 md:p-10 rounded-4xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-xl relative overflow-hidden group">
               {/* Subtle ambient light inside the form */}

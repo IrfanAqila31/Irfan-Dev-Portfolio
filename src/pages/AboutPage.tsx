@@ -6,6 +6,7 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import TechStackGrid from "../components/TechStackGrid";
 import Timeline from "../components/Timeline";
+import { Lightbulb, Gamepad2, MapPin } from "lucide-react";
 
 const AboutPage = () => {
   const formatReadableDate = (dateString: string) => {
@@ -22,7 +23,7 @@ const AboutPage = () => {
       <section id="about" className="pt-32 pb-26">
         <div className="container mx-auto">
           <div className="w-full px-5">
-            <div className="max-w-xl mx-auto text-center mb-16 ">
+            <div className="max-w-xl mx-auto text-center mb-16" data-aos="fade-up">
               <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold md:text-3xl text-2xl lg:text-4xl mb-3 inline-block">
                 About Me
               </h4>
@@ -34,7 +35,7 @@ const AboutPage = () => {
         </div>
         <div className="container mx-auto">
           <div className="flex flex-wrap justify-center items-center">
-            <div className="w-full px-5 md:w-1/2 flex justify-center">
+            <div className="w-full px-5 md:w-1/2 flex justify-center" data-aos="fade-right" data-aos-delay="100">
               <ProfileCard
                 name="Irfan Aqila Utama"
                 title="Junior Front End Developer"
@@ -50,10 +51,10 @@ const AboutPage = () => {
             </div>
             <div className="w-full px-5 md:w-1/2 flex flex-col gap-6 mt-10 md:mt-0 xl:max-w-xl">
               {/* Card 1: Utama (Perjalanan & Posisi) */}
-              <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-indigo-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden">
+              <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-indigo-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden" data-aos="fade-left" data-aos-delay="200">
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none group-hover:bg-indigo-500/20 transition-all duration-500"></div>
                 <h3 className="text-xl font-semibold text-slate-100 mb-3 flex items-center gap-2">
-                  <span className="text-indigo-400">💡</span> Developer Journey
+                  <Lightbulb className="w-5 h-5 text-indigo-400" /> Developer Journey
                 </h3>
                 <p className="text-slate-300 text-sm md:text-base leading-relaxed">
                   Saya sedang menempuh perjalanan menjadi Front-End Developer
@@ -66,10 +67,10 @@ const AboutPage = () => {
               {/* Grid Baris 2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
                 {/* Card 2: Gamer (Hobby) */}
-                <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-purple-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center">
+                <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-purple-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center" data-aos="fade-up" data-aos-delay="300">
                   <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-purple-500/10 blur-2xl rounded-full pointer-events-none group-hover:bg-purple-500/20 transition-all duration-500"></div>
                   <h3 className="text-lg font-semibold text-slate-100 mb-2 flex items-center gap-2">
-                    <span className="text-purple-400">🎮</span> Gamer at Heart
+                    <Gamepad2 className="w-5 h-5 text-purple-400" /> Casual Gamer
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
                     Suka main game, titik. 🎮
@@ -77,10 +78,10 @@ const AboutPage = () => {
                 </div>
 
                 {/* Card 3: Lokasi / Fast Facts */}
-                <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-emerald-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center">
+                <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-emerald-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center" data-aos="fade-up" data-aos-delay="400">
                   <div className="absolute -top-6 -left-6 w-24 h-24 bg-emerald-500/10 blur-2xl rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500"></div>
                   <h3 className="text-lg font-semibold text-slate-100 mb-2 flex items-center gap-2">
-                    <span className="text-emerald-400">📍</span> Location
+                    <MapPin className="w-5 h-5 text-emerald-400" /> Location
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed font-medium">
                     Lombok Tengah, Nusa Tenggara Barat, Indonesia <br />
@@ -92,7 +93,7 @@ const AboutPage = () => {
               </div>
 
               {/* Card 4: GitHub Contributions */}
-              <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-cyan-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden w-full">
+              <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-cyan-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden w-full" data-aos="fade-up" data-aos-delay="500">
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-cyan-500/5 blur-[100px] pointer-events-none group-hover:bg-cyan-500/10 transition-all duration-500"></div>
                 <h3 className="text-slate-100 font-semibold mb-5 flex items-center gap-2 relative z-10">
                   <svg
@@ -141,14 +142,14 @@ const AboutPage = () => {
         
         {/* Tech Stack Grid Section */}
         <div className="container mx-auto">
-          <div className="px-5 mt-16 max-w-6xl mx-auto">
+          <div className="px-5 mt-16 max-w-6xl mx-auto" data-aos="fade-up">
             <TechStackGrid />
           </div>
         </div>
         
         {/* Experience & Education Timeline Section */}
         <div className="container mx-auto">
-          <div className="px-5 max-w-4xl mx-auto">
+          <div className="px-5 max-w-4xl mx-auto" data-aos="fade-up">
             <Timeline />
           </div>
         </div>

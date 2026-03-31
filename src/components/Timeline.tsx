@@ -1,3 +1,5 @@
+import { GraduationCap, Briefcase } from "lucide-react";
+
 const Timeline = () => {
   const experiences = [
     {
@@ -17,7 +19,7 @@ const Timeline = () => {
       type: "education",
     },
     {
-      year: "2018 - 2021",
+      year: "2017 - 2020",
       title: "Desain Pemodelan & Informasi Bangunan",
       company: "SMKN 2 Kuripan",
       description:
@@ -54,9 +56,12 @@ const Timeline = () => {
 
               <div className="flex flex-col md:flex-row md:items-center justify-between mb-2 md:mb-4 relative z-10">
                 <h4 className="text-lg md:text-xl font-bold text-slate-100 flex items-center gap-3">
-                  <span className="text-2xl">
-                    {item.type === "education" ? "🎓" : "💼"}
-                  </span>{" "}
+                  {item.type === "education" ? (
+                    // icon lucide react
+                    <GraduationCap className="w-6 h-6 text-cyan-400" />
+                  ) : (
+                    <Briefcase className="w-6 h-6 text-indigo-400" />
+                  )}
                   {item.title}
                 </h4>
                 <span className="text-sm font-medium px-4 py-1.5 rounded-full bg-slate-800/80 text-slate-300 border border-slate-700 mt-3 md:mt-0 inline-block w-fit shadow-md">
