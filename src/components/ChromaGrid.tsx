@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { gsap } from "gsap";
-import personalWeb from "../assets/demo/personal-web.png";
-import AI from "../assets/demo/AI.png";
-import SaaS from "../assets/demo/saaS landingPage.png";
+import PersonalWeb from "../assets/demo/personal-web.webp";
+import LuminaAI from "../assets/demo/lumina-ai.webp";
+import SaaS from "../assets/demo/Saas.webp";
 
 export interface ChromaItem {
   image: string;
@@ -42,7 +42,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
 
   const demo: ChromaItem[] = [
     {
-      image: personalWeb,
+      image: PersonalWeb,
       title: "Personal Portfolio",
       subtitle: "A showcase of my web development projects and skills.",
       handle: "",
@@ -60,7 +60,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       url: "https://sass-landing-page-wine.vercel.app/",
     },
     {
-      image: AI,
+      image: LuminaAI,
       title: "Lumina AI ",
       subtitle:
         "AI chat application built with React, Typescript, dan Tailwind",
