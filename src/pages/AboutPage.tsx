@@ -53,7 +53,7 @@ const AboutPage = () => {
               {/* Card 1: Utama (Perjalanan & Posisi) */}
               <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-indigo-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden" data-aos="fade-left" data-aos-delay="200">
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none group-hover:bg-indigo-500/20 transition-all duration-500"></div>
-                <h3 className="text-xl font-semibold text-slate-100 mb-3 flex items-center gap-2">
+                <h3 className="text-base lg:text-lg font-semibold text-slate-100 mb-3 flex items-center gap-2">
                   <Lightbulb className="w-5 h-5 text-indigo-400" /> Developer Journey
                 </h3>
                 <p className="text-slate-300 text-sm md:text-base leading-relaxed">
@@ -69,7 +69,7 @@ const AboutPage = () => {
                 {/* Card 2: Gamer (Hobby) */}
                 <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-purple-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center" data-aos="fade-up" data-aos-delay="300">
                   <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-purple-500/10 blur-2xl rounded-full pointer-events-none group-hover:bg-purple-500/20 transition-all duration-500"></div>
-                  <h3 className="text-lg font-semibold text-slate-100 mb-2 flex items-center gap-2">
+                  <h3 className="text-base lg:text-lg  font-semibold text-slate-100 mb-2 flex items-center gap-2">
                     <Gamepad2 className="w-5 h-5 text-purple-400" /> Casual Gamer
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed">
@@ -80,7 +80,7 @@ const AboutPage = () => {
                 {/* Card 3: Lokasi / Fast Facts */}
                 <div className="p-6 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-emerald-500/50 hover:bg-slate-800/50 transition-all duration-300 group relative overflow-hidden flex flex-col justify-center" data-aos="fade-up" data-aos-delay="400">
                   <div className="absolute -top-6 -left-6 w-24 h-24 bg-emerald-500/10 blur-2xl rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500"></div>
-                  <h3 className="text-lg font-semibold text-slate-100 mb-2 flex items-center gap-2">
+                  <h3 className="text-base lg:text-lg font-semibold text-slate-100 mb-2 flex items-center gap-2">
                     <MapPin className="w-5 h-5 text-emerald-400" /> Location
                   </h3>
                   <p className="text-slate-400 text-sm leading-relaxed font-medium">

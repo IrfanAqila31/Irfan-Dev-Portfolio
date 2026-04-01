@@ -175,7 +175,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
                   src={c.image}
                   alt={c.title}
                   loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                  className="absolute inset-0 w-full h-full object-cover object-[center_45%] opacity-90 group-hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             </div>
