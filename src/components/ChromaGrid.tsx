@@ -4,11 +4,13 @@ import PersonalWeb from "../assets/demo/personal-web.webp";
 import LuminaAI from "../assets/demo/lumina-ai.webp";
 import SaaS from "../assets/demo/Saas.webp";
 import BelanjaPintar from "../assets/demo/belanja-pintar.webp";
+import { ChevronDown } from "lucide-react";
 
 export interface ChromaItem {
   image: string;
   title: string;
   subtitle: string;
+  longDescription?: string;
   handle?: string;
   location?: string;
   borderColor?: string;
@@ -47,6 +49,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       title: "Personal Portfolio",
       subtitle:
         "Portofolio yang menampilkan proyek dan keahlian pengembangan web saya.",
+      longDescription:
+        "Sebuah website portofolio sederhana tapi terlihat modern yang dibangun dengan Tailwind CSS. Menampilkan desain responsif, animasi halus menggunakan aos.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -57,6 +61,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       title: "SaaS Landing Page",
       subtitle:
         "Landing page SaaS bersih dan responsif dengan desain antarmuka modern",
+      longDescription:
+        "Dashboard SaaS dengan fokus pada UX yang bersih. Menggunakan arsitektur komponen modular untuk memudahkan skalabilitas dan kustomisasi tema terang yang premium.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -67,6 +73,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       title: "Lumina AI ",
       subtitle:
         "Aplikasi chat berbasis AI dirancang dengan React, TypeScript, dan Tailwind",
+      longDescription:
+        "Antarmuka chat kecerdasan buatan yang interaktif. Menerapkan manajemen state yang kompleks, streaming response, dan desain futuristik dengan efek glassmorphism.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -77,6 +85,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       title: "Belanja Pintar ",
       subtitle:
         "Kelola daftar belanja harian dengan cerdas, cepat, rapi, dan terorganisir baik",
+      longDescription:
+        "Asisten belanja cerdas yang mengintegrasikan AI untuk membantu menemukan bahan masakan secara otomatis hanya dengan memasukkan nama hidangan. Dilengkapi dengan dashboard progres real-time, kategorisasi otomatis, dan manajemen daftar belanja yang intuitif untuk pengalaman yang lebih efisien.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -125,17 +135,6 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     });
   };
 
-  const handleCardClick = (url?: string) => {
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
-  };
-
-  const handleCardMove: React.MouseEventHandler<HTMLElement> = (e) => {
-    const c = e.currentTarget as HTMLElement;
-    const rect = c.getBoundingClientRect();
-    c.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
-    c.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
-  };
-
   return (
     <div
       ref={rootRef}
@@ -151,63 +150,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       }
     >
       {data.map((c, i) => (
-        <article
-          key={i}
-          onMouseMove={handleCardMove}
-          onClick={() => handleCardClick(c.url)}
-          className="group relative flex flex-col w-[250px] rounded-[20px] overflow-hidden border-2 border-transparent transition-colors duration-300 cursor-pointer"
-          style={
-            {
-              "--card-border": c.borderColor || "transparent",
-              background: c.gradient,
-              "--spotlight-color": "rgba(255,255,255,0.3)",
-            } as React.CSSProperties
-          }
-        >
-          <div
-            className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
-            style={{
-              background:
-                "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
-            }}
-          />
-          <div className="relative z-10 w-full p-4 pb-0 box-border">
-            {/* Browser / Device Mockup */}
-            <div className="w-full rounded-lg overflow-hidden border border-slate-700/50 bg-slate-900 shadow-2xl group-hover:-translate-y-1 transition-transform duration-300">
-              {/* Browser Header (Mac style dots) */}
-              <div className="flex items-center px-2.5 py-1.5 bg-slate-800/80 border-b border-slate-700/50">
-                <div className="flex gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500/80"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/80"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
-                </div>
-              </div>
-              {/* Image Frame */}
-              <div className="relative w-full aspect-4/3 bg-slate-950">
-                <img
-                  src={c.image}
-                  alt={c.title}
-                  loading="lazy"
-                  className="absolute inset-0 w-full h-full object-cover object-[center_45%] opacity-90 group-hover:opacity-100 transition-opacity duration-300"
-                />
-              </div>
-            </div>
-          </div>
-          <footer className="relative z-10 p-3 text-white font-sans">
-            <h3 className="m-0 text-[1.05rem] font-semibold">{c.title}</h3>
-            {c.handle && (
-              <span className="text-[0.95rem] opacity-80 text-right">
-                {c.handle}
-              </span>
-            )}
-            <p className="m-0 text-[0.85rem] opacity-85">{c.subtitle}</p>
-            {c.location && (
-              <span className="text-[0.85rem] opacity-85 text-right">
-                {c.location}
-              </span>
-            )}
-          </footer>
-        </article>
+        <ProjectCard key={i} item={c} />
       ))}
       <div
         className="absolute inset-0 pointer-events-none z-30"
@@ -238,6 +181,122 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
         }}
       />
     </div>
+  );
+};
+
+const ProjectCard: React.FC<{ item: ChromaItem }> = ({ item }) => {
+  const [isExpanded, setIsExpanded] = React.useState(false);
+
+  const handleCardClick = (url?: string) => {
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
+  };
+
+  const handleCardMove: React.MouseEventHandler<HTMLElement> = (e) => {
+    const c = e.currentTarget as HTMLElement;
+    const rect = c.getBoundingClientRect();
+    c.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    c.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
+  };
+
+  const toggleExpand = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <article
+      onMouseMove={handleCardMove}
+      onClick={() => handleCardClick(item.url)}
+      className="group relative flex flex-col w-[280px] rounded-[24px] overflow-hidden border border-white/5 transition-all duration-500 cursor-pointer hover:shadow-2xl hover:shadow-indigo-500/20"
+      style={
+        {
+          "--card-border": item.borderColor || "transparent",
+          background: item.gradient,
+          "--spotlight-color": "rgba(255,255,255,0.15)",
+        } as React.CSSProperties
+      }
+    >
+      <div
+        className="absolute inset-0 pointer-events-none transition-opacity duration-500 z-20 opacity-0 group-hover:opacity-100"
+        style={{
+          background:
+            "radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%)",
+        }}
+      />
+      <div className="relative z-10 w-full p-4 pb-0 box-border">
+        {/* Browser / Device Mockup */}
+        <div className="w-full rounded-xl overflow-hidden border border-white/10 bg-slate-950/50 shadow-2xl group-hover:-translate-y-1 transition-transform duration-500">
+          {/* Browser Header */}
+          <div className="flex items-center px-3 py-2 bg-white/5 border-b border-white/5">
+            <div className="flex gap-1.5">
+              <div className="w-2 h-2 rounded-full bg-rose-500/40"></div>
+              <div className="w-2 h-2 rounded-full bg-amber-500/40"></div>
+              <div className="w-2 h-2 rounded-full bg-emerald-500/40"></div>
+            </div>
+          </div>
+          {/* Image Frame */}
+          <div className="relative w-full aspect-4/3 bg-slate-900">
+            <img
+              src={item.image}
+              alt={item.title}
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-cover object-[center_45%] opacity-80 group-hover:opacity-100 transition-all duration-700 scale-105 group-hover:scale-100"
+            />
+          </div>
+        </div>
+      </div>
+      <footer className="relative z-10 p-5 text-white font-sans flex flex-col gap-2">
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex flex-col">
+            <h3 className="m-0 text-lg font-bold tracking-tight text-white/90">
+              {item.title}
+            </h3>
+            {item.handle && (
+              <span className="text-xs font-medium text-indigo-400">
+                {item.handle}
+              </span>
+            )}
+          </div>
+          {item.longDescription && (
+            <button
+              onClick={toggleExpand}
+              className={`p-1.5 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 transition-all duration-300 ${
+                isExpanded ? "rotate-180" : ""
+              }`}
+            >
+              <ChevronDown className="w-4 h-4 text-white/70" />
+            </button>
+          )}
+        </div>
+
+        <p className="m-0 text-[0.875rem] leading-relaxed text-white/60 font-medium">
+          {item.subtitle}
+        </p>
+
+        {/* Expandable Long Description */}
+        <div
+          className={`grid transition-all duration-500 ease-in-out ${
+            isExpanded
+              ? "grid-rows-[1fr] opacity-100 mt-2"
+              : "grid-rows-[0fr] opacity-0"
+          }`}
+        >
+          <div className="overflow-hidden">
+            <div className="pt-3 border-t border-white/5">
+              <p className="text-[0.825rem] leading-relaxed text-white/50 italic">
+                {item.longDescription}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {item.location && (
+          <span className="text-xs font-medium text-white/40 mt-1">
+            {item.location}
+          </span>
+        )}
+      </footer>
+    </article>
   );
 };
 
