@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import PersonalWeb from "../assets/demo/personal-web.webp";
 import LuminaAI from "../assets/demo/lumina-ai.webp";
 import SaaS from "../assets/demo/Saas.webp";
+import BelanjaPintar from "../assets/demo/belanja-pintar.webp";
 
 export interface ChromaItem {
   image: string;
@@ -44,7 +45,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: PersonalWeb,
       title: "Personal Portfolio",
-      subtitle: "A showcase of my web development projects and skills.",
+      subtitle:
+        "Portofolio yang menampilkan proyek dan keahlian pengembangan web saya.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -53,7 +55,8 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: SaaS,
       title: "SaaS Landing Page",
-      subtitle: "Clean and responsive SaaS landing page with modern UI desi",
+      subtitle:
+        "Landing page SaaS bersih dan responsif dengan desain antarmuka modern",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -63,11 +66,21 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       image: LuminaAI,
       title: "Lumina AI ",
       subtitle:
-        "AI chat application built with React, Typescript, dan Tailwind",
+        "Aplikasi chat berbasis AI dirancang dengan React, TypeScript, dan Tailwind",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://ai-assistant-eight-taupe.vercel.app/",
+    },
+    {
+      image: BelanjaPintar,
+      title: "Belanja Pintar ",
+      subtitle:
+        "Kelola daftar belanja harian dengan cerdas, cepat, rapi, dan terorganisir baik",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://belanja-pintar-chi.vercel.app/",
     },
   ];
 
