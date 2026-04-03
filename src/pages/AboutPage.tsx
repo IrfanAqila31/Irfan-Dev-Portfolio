@@ -6,6 +6,7 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import TechStackGrid from "../components/TechStackGrid";
 import Timeline from "../components/Timeline";
+import CertificateGallery from "../components/CertificateGallery";
 import { Lightbulb, Gamepad2, MapPin } from "lucide-react";
 
 const AboutPage = () => {
@@ -168,6 +169,13 @@ const AboutPage = () => {
         <div className="container mx-auto">
           <div className="px-5 max-w-4xl mx-auto" data-aos="fade-up">
             <Timeline />
+          </div>
+        </div>
+
+        {/* Achievements & Certificates Section */}
+        <div className="container mx-auto">
+          <div className="px-5">
+            <CertificateGallery />
           </div>
         </div>
       </section>
