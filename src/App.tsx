@@ -13,6 +13,8 @@ import Faq from "./components/Faq";
 import FloatingWA from "./components/FloatingWA";
 import MusicPlayer from "./components/MusicPlayer";
 import ScrollProgress from "./components/ScrollProgress";
+import BackToTop from "./components/BackToTop";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   useEffect(() => {
@@ -44,7 +46,9 @@ function App() {
         <ContactPage />
         <Footer />
         <FloatingWA />
+        <BackToTop />
         <MusicPlayer />
+        <Toaster position="top-center" />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
@@ -31,10 +32,41 @@ const ContactPage = () => {
         },
       );
 
-      alert("Pesan berhasil dikirim");
+      toast.success("Pesan berhasil dikirim! 🎉", {
+        duration: 4000,
+        style: {
+          background: "rgba(15, 23, 42, 0.9)",
+          color: "#e2e8f0",
+          border: "1px solid rgba(99, 102, 241, 0.3)",
+          borderRadius: "16px",
+          backdropFilter: "blur(12px)",
+          padding: "16px 20px",
+          boxShadow: "0 8px 32px rgba(99, 102, 241, 0.15)",
+        },
+        iconTheme: {
+          primary: "#10b981",
+          secondary: "#0f172a",
+        },
+      });
       form.reset();
     } catch (error) {
       console.error(error);
+      toast.error("Gagal mengirim pesan. Coba lagi nanti 😞", {
+        duration: 4000,
+        style: {
+          background: "rgba(15, 23, 42, 0.9)",
+          color: "#e2e8f0",
+          border: "1px solid rgba(239, 68, 68, 0.3)",
+          borderRadius: "16px",
+          backdropFilter: "blur(12px)",
+          padding: "16px 20px",
+          boxShadow: "0 8px 32px rgba(239, 68, 68, 0.15)",
+        },
+        iconTheme: {
+          primary: "#ef4444",
+          secondary: "#0f172a",
+        },
+      });
     } finally {
       setLoading(false);
     }
