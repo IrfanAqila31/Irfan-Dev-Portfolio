@@ -7,7 +7,11 @@ const Footer = () => {
         <div className="container mx-auto">
           <div className="flex flex-wrap px-5 gap-y-10">
             {/* Kolom 1 — Nama + Tagline + Kontak */}
-            <div className="w-full md:w-1/3 text-slate-300" data-aos="fade-up" data-aos-delay="100">
+            <div
+              className="w-full md:w-1/3 text-slate-300"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <h2 className="font-bold text-3xl text-slate-100 mb-1">
                 Irfan Aqila Utama
               </h2>
@@ -21,7 +25,11 @@ const Footer = () => {
             </div>
 
             {/* Kolom 2 — Tautan Navigasi */}
-            <div className="w-full md:w-1/3" data-aos="fade-up" data-aos-delay="200">
+            <div
+              className="w-full md:w-1/3"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <h3 className="font-bold text-base text-slate-300 mb-4">
                 Tautan
               </h3>
@@ -62,7 +70,11 @@ const Footer = () => {
             </div>
 
             {/* Kolom 3 — Sosial Media */}
-            <div className="w-full md:w-1/3" data-aos="fade-up" data-aos-delay="300">
+            <div
+              className="w-full md:w-1/3"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <h3 className="font-bold text-base text-slate-300 mb-4">
                 Sosial Media
               </h3>

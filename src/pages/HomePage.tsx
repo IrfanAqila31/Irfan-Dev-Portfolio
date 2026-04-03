@@ -14,14 +14,25 @@ const HomePage = () => {
         className="relative pt-50 pb-32 mx-auto text-center w-full"
       >
         <div className="px-5">
-          <h1 className="text-indigo-300 md:text-lg animate-bounce" data-aos="fade-down">
+          <h1
+            className="text-indigo-300 md:text-lg animate-bounce"
+            data-aos="fade-down"
+          >
             Halo Semua👋
           </h1>
-          <h2 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-2 text-3xl mt-1 font-bold md:text-4xl lg:text-7xl" data-aos="zoom-in" data-aos-delay="100">
+          <h2
+            className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-2 text-3xl mt-1 font-bold md:text-4xl lg:text-7xl"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
             Saya Irfan Aqila Utama
           </h2>
           {/* Typing Animation */}
-          <h3 className="text-slate-400 text-lg md:text-xl mt-2 lg:text-2xl" data-aos="fade-up" data-aos-delay="200">
+          <h3
+            className="text-slate-400 text-lg md:text-xl mt-2 lg:text-2xl"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <TypeAnimation
               sequence={[
                 "Junior Front End Developer",
@@ -37,12 +48,21 @@ const HomePage = () => {
               repeat={Infinity}
             />
           </h3>
-          <p className="text-slate-400 mt-3 lg:text-lg mb-8" data-aos="fade-up" data-aos-delay="300">
-            Membangun antarmuka web modern dengan kode yang bersih dan performa optimal.
+          <p
+            className="text-slate-400 mt-3 lg:text-lg mb-8"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            Membangun antarmuka web modern dengan kode yang bersih dan performa
+            optimal.
           </p>
-          
+
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="400">
+          <div
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             {/* Tombol Hubungi Saya */}
             <a
               href="#contact"
@@ -50,7 +70,7 @@ const HomePage = () => {
             >
               <MessageCircle className="w-5 h-5" /> Hubungi Saya
             </a>
-            
+
             {/* Tombol Download CV */}
             {/* Pastikan file CV Anda ditaruh di folder /public dengan nama yang sesuai */}
             <a
@@ -64,7 +84,11 @@ const HomePage = () => {
             </a>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mt-2" data-aos="zoom-in" data-aos-delay="500">
+          <div
+            className="flex items-center justify-center gap-4 mt-2"
+            data-aos="zoom-in"
+            data-aos-delay="500"
+          >
             {/*LinkedIn */}
 
             <a

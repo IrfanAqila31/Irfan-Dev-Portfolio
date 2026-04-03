@@ -11,12 +11,13 @@ import ProjectPage from "./pages/ProjectPage";
 import Services from "./components/Services";
 import Faq from "./components/Faq";
 import FloatingWA from "./components/FloatingWA";
+import MusicPlayer from "./components/MusicPlayer";
+import ScrollProgress from "./components/ScrollProgress";
 
 function App() {
   useEffect(() => {
     AOS.init({
       once: false,
-      mirror: true,
       duration: 800,
       offset: 100,
     });
@@ -24,6 +25,7 @@ function App() {
 
   return (
     <div className="relative min-h-screen bg-slate-950 w-full overflow-x-hidden text-slate-300 flex flex-col items-center">
+      <ScrollProgress />
       {/* Background Mesh Global */}
       <div className="fixed inset-0 z-0 pointer-events-none flex justify-center w-full">
         <div className="absolute top-[-10%] left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-indigo-600/10 blur-[120px] rounded-full"></div>
@@ -42,6 +44,7 @@ function App() {
         <ContactPage />
         <Footer />
         <FloatingWA />
+        <MusicPlayer />
       </div>
     </div>
   );

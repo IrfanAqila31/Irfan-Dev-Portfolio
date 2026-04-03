@@ -38,29 +38,32 @@ const Services = () => {
           {services.map((service, idx) => (
             <div
               key={idx}
-              className="relative group p-8 rounded-4xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-xl hover:border-indigo-500/50 hover:bg-slate-800/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden"
               data-aos="fade-up"
               data-aos-delay={idx * 150}
             >
-              {/* Animated Gradient Background */}
-              <div className={`absolute -top-24 -right-24 w-48 h-48 bg-linear-to-br ${service.color} opacity-10 blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
-              
-              <div className="relative z-10">
-                <div className="text-4xl mb-6 flex justify-center md:justify-start">
-                  <div className="w-16 h-16 rounded-2xl bg-slate-800/80 flex items-center justify-center border border-slate-700 transition-colors group-hover:bg-indigo-500/10 group-hover:border-indigo-500/50">
-                    {service.icon}
+              <div
+                className="relative group p-8 rounded-4xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-xl hover:border-indigo-500/50 hover:bg-slate-800/60 transition-all duration-500 hover:-translate-y-2 overflow-hidden h-full"
+              >
+                {/* Animated Gradient Background */}
+                <div className={`absolute -top-24 -right-24 w-48 h-48 bg-linear-to-br ${service.color} opacity-10 blur-3xl group-hover:scale-150 transition-transform duration-700`}></div>
+                
+                <div className="relative z-10">
+                  <div className="text-4xl mb-6 flex justify-center md:justify-start">
+                    <div className="w-16 h-16 rounded-2xl bg-slate-800/80 flex items-center justify-center border border-slate-700 transition-colors group-hover:bg-indigo-500/10 group-hover:border-indigo-500/50">
+                      {service.icon}
+                    </div>
                   </div>
+                  <h3 className="text-xl font-bold text-slate-100 mb-4 text-center md:text-left">
+                    {service.title}
+                  </h3>
+                  <p className="text-slate-400 text-sm leading-relaxed text-center md:text-left group-hover:text-slate-300 transition-colors">
+                    {service.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-bold text-slate-100 mb-4 text-center md:text-left">
-                  {service.title}
-                </h3>
-                <p className="text-slate-400 text-sm leading-relaxed text-center md:text-left group-hover:text-slate-300 transition-colors">
-                  {service.description}
-                </p>
+                
+                {/* Bottom Accent Line */}
+                <div className={`absolute bottom-0 left-0 h-1 bg-linear-to-r ${service.color} w-0 group-hover:w-full transition-all duration-500`}></div>
               </div>
-              
-              {/* Bottom Accent Line */}
-              <div className={`absolute bottom-0 left-0 h-1 bg-linear-to-r ${service.color} w-0 group-hover:w-full transition-all duration-500`}></div>
             </div>
           ))}
         </div>
@@ -70,3 +73,4 @@ const Services = () => {
 };
 
 export default Services;
+

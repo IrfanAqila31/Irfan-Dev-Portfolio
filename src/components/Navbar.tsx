@@ -8,7 +8,9 @@ export default function Navbar() {
       {/* Layar transparan (Overlay) untuk  menangkap klik di luar menu */}
       <div
         className={`fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-500 md:hidden -z-10 ${
-          isOpen ? "opacity-80 pointer-events-auto" : "opacity-0 pointer-events-none"
+          isOpen
+            ? "opacity-80 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setIsOpen(false)}
       ></div>
