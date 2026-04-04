@@ -5,6 +5,7 @@ import LuminaAI from "../assets/demo/lumina-ai.webp";
 import SaaS from "../assets/demo/Saas.webp";
 import BelanjaPintar from "../assets/demo/belanja-pintar.webp";
 import { ChevronDown } from "lucide-react";
+import DompetKu from "../assets/demo/dompetku.webp";
 
 export interface ChromaItem {
   image: string;
@@ -92,6 +93,18 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://belanja-pintar-chi.vercel.app/",
     },
+    {
+      image: DompetKu,
+      title: "DompetKu ",
+      subtitle:
+        "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif",
+      longDescription:
+        "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif. Dilengkapi dengan fitur-fitur seperti pencatatan pengeluaran, pemasukan, dan laporan keuangan yang mudah dipahami.",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://dompetku-henna.vercel.app/",
+    },
   ];
 
   const data = items?.length ? items : demo;
@@ -140,7 +153,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       ref={rootRef}
       onPointerMove={handleMove}
       onPointerLeave={handleLeave}
-      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-5 ${className}`}
+      className={`relative w-full h-full flex flex-wrap justify-center items-center gap-7 mx-auto ${className}`}
       style={
         {
           "--r": `${radius}px`,
