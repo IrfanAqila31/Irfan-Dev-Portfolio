@@ -1,4 +1,4 @@
-// import Button from "../components/Button"; // Diubah untuk dua tombol langsung di bawah
+
 import LinkedinIcon from "../components/LinkedinIcon";
 import InatagramIcon from "../components/InstagramIcon";
 import GithubIcon from "../components/GithubIcon";
@@ -71,17 +71,30 @@ const HomePage = () => {
               <MessageCircle className="w-5 h-5" /> Hubungi Saya
             </a>
 
-            {/* Tombol Download CV */}
-            {/* Pastikan file CV Anda ditaruh di folder /public dengan nama yang sesuai */}
-            <a
-              href="/CV IRFAN AQILA UTAMA.pdf"
-              target="_blank"
-              rel="noreferrer"
-              download
-              className="w-full sm:w-auto px-8 py-3 rounded-full text-slate-300 border border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2"
-            >
-              <Download className="w-5 h-5" /> Download CV
-            </a>
+            {/* CV Download Group */}
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              {/* Tombol Download CV (ID) */}
+              <a
+                href="/CV IRFAN AQILA UTAMA.pdf"
+                target="_blank"
+                rel="noreferrer"
+                download
+                className="flex-1 sm:flex-none sm:min-w-[140px] px-6 py-3 rounded-full text-slate-300 border border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm"
+              >
+                <Download className="w-5 h-5" /> CV (ID)
+              </a>
+
+              {/* Tombol Download CV (EN) */}
+              <a
+                href="/CV IRFAN AQILA UTAMA (English).pdf"
+                target="_blank"
+                rel="noreferrer"
+                download
+                className="flex-1 sm:flex-none sm:min-w-[140px] px-6 py-3 rounded-full text-slate-300 border border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm"
+              >
+                <Download className="w-5 h-5" /> CV (EN)
+              </a>
+            </div>
           </div>
 
           <div
