@@ -1,30 +1,11 @@
 import { useState } from "react";
-
-const faqs = [
-  {
-    question: "Apakah Anda menerima tawaran freelance?",
-    answer:
-      "Ya, saya sangat terbuka untuk proyek freelance, baik itu membangun website baru dari nol atau mengembangkan fitur baru pada website yang sudah ada.",
-  },
-  {
-    question: "Apa tech stack utama yang Anda gunakan?",
-    answer:
-      "Fokus utama saya saat ini adalah React.js Ecosystem, termasuk Tailwind CSS untuk styling dan Git untuk version control. Saya selalu haus akan teknologi baru seperti Next.js atau TypeScript.",
-  },
-  {
-    question: "Berapa lama waktu pembuatan website?",
-    answer:
-      "Tergantung pada kompleksitasnya. Untuk Landing Page sederhana biasanya memakan waktu 3-7 hari, sementara website modular yang lebih kompleks bisa 2-4 minggu.",
-  },
-  {
-    question: "Bagaimana cara mulai berkolaborasi?",
-    answer:
-      "Anda cukup mengisi form pada bagian contact atau langsung menghubungi saya melalui Email/WhatsApp. Kita bisa mulai dengan obrolan ringan tentang kebutuhan Anda.",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 const Faq = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
+
+  const faqs = t("faq.items") as {question: string, answer: string}[];
 
   const toggleFaq = (idx: number) => {
     setActiveIndex(activeIndex === idx ? null : idx);
@@ -35,7 +16,7 @@ const Faq = () => {
       <div className="container mx-auto px-5 max-w-4xl">
         <div className="text-center mb-16" data-aos="fade-up">
           <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold text-2xl md:text-3xl lg:text-4xl mb-3 inline-block">
-            Frequently Asked Questions
+            {t("faq.title")}
           </h4>
         </div>
 

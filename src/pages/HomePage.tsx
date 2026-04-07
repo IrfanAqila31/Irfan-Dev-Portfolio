@@ -4,9 +4,12 @@ import InatagramIcon from "../components/InstagramIcon";
 import GithubIcon from "../components/GithubIcon";
 import TechMarquee from "../components/TechMarquee";
 import { TypeAnimation } from "react-type-animation";
-import { MessageCircle, Download } from "lucide-react";
+import { MessageCircle, Download, ChevronDown } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const HomePage = () => {
+  const { t, language } = useLanguage();
+
   return (
     <div className="w-full">
       <section
@@ -18,14 +21,14 @@ const HomePage = () => {
             className="text-indigo-300 md:text-lg animate-bounce"
             data-aos="fade-down"
           >
-            Halo Semua👋
+            {t("home.greeting")}
           </h1>
           <h2
             className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-2 text-3xl mt-1 font-bold md:text-4xl lg:text-7xl"
             data-aos="zoom-in"
             data-aos-delay="100"
           >
-            Saya Irfan Aqila Utama
+            {t("home.nameIntro")}
           </h2>
           {/* Typing Animation */}
           <h3
@@ -34,12 +37,13 @@ const HomePage = () => {
             data-aos-delay="200"
           >
             <TypeAnimation
+              key={language}
               sequence={[
-                "Junior Front End Developer",
+                t("home.typeAnimation")[0],
                 2000,
-                "Fresh Graduate",
+                t("home.typeAnimation")[1],
                 2000,
-                "Always Learning",
+                t("home.typeAnimation")[2],
                 2000,
               ]}
               wrapper="span"
@@ -53,13 +57,12 @@ const HomePage = () => {
             data-aos="fade-up"
             data-aos-delay="300"
           >
-            Membangun antarmuka web modern dengan kode yang bersih dan performa
-            optimal.
+            {t("home.description")}
           </p>
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
+            className="relative z-20 flex flex-col sm:flex-row items-center justify-center gap-4 mb-10"
             data-aos="fade-up"
             data-aos-delay="400"
           >
@@ -68,37 +71,48 @@ const HomePage = () => {
               href="#contact"
               className="w-full sm:w-auto bg-linear-to-r from-indigo-700 to-indigo-900 hover:from-indigo-600 hover:to-indigo-800 px-8 py-3 rounded-full text-white transition font-medium duration-300 lg:text-md shadow-lg shadow-indigo-500/30 flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-5 h-5" /> Hubungi Saya
+              <MessageCircle className="w-5 h-5" /> {t("home.contactBtn")}
             </a>
 
             {/* CV Download Group */}
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              {/* Tombol Download CV (ID) */}
-              <a
-                href="/CV IRFAN AQILA UTAMA.pdf"
-                target="_blank"
-                rel="noreferrer"
-                download
-                className="flex-1 sm:flex-none sm:min-w-[140px] px-6 py-3 rounded-full text-slate-300 border border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm"
+            <div className="relative group w-full sm:w-auto">
+              <button
+                className="w-full sm:w-auto px-6 py-3 rounded-full text-slate-300 border border-slate-600 group-hover:border-indigo-400 group-hover:text-indigo-300 group-hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm"
               >
-                <Download className="w-5 h-5" /> CV (ID)
-              </a>
+                <Download className="w-5 h-5" /> {t("home.cvBtn")} <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
+              </button>
 
-              {/* Tombol Download CV (EN) */}
-              <a
-                href="/CV IRFAN AQILA UTAMA (English).pdf"
-                target="_blank"
-                rel="noreferrer"
-                download
-                className="flex-1 sm:flex-none sm:min-w-[140px] px-6 py-3 rounded-full text-slate-300 border border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm"
-              >
-                <Download className="w-5 h-5" /> CV (EN)
-              </a>
+              {/* Dropdown Menu Wrapper (pt-2 prevents hover loss) */}
+              <div className="absolute left-0 top-full pt-2 w-full md:w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top translate-y-[-10px] group-hover:translate-y-0">
+                {/* Solid Background Card */}
+                <div className="bg-slate-900 border border-slate-600 rounded-2xl shadow-2xl shadow-black overflow-hidden relative z-50">
+                  <div className="flex flex-col py-2">
+                    <a
+                      href="/CV IRFAN AQILA UTAMA.pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                      className="px-5 py-3 text-sm md:text-base text-slate-100 hover:bg-slate-700 hover:text-indigo-300 transition-colors border-b border-slate-600 flex items-center justify-between"
+                    >
+                      {t("home.cvId")} <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-400">ID</span>
+                    </a>
+                    <a
+                      href="/CV IRFAN AQILA UTAMA (English).pdf"
+                      target="_blank"
+                      rel="noreferrer"
+                      download
+                      className="px-5 py-3 text-sm md:text-base text-slate-100 hover:bg-slate-700 hover:text-indigo-300 transition-colors flex items-center justify-between"
+                    >
+                      {t("home.cvEn")} <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-400">EN</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
           <div
-            className="flex items-center justify-center gap-4 mt-2"
+            className="relative z-20 flex items-center justify-center gap-4 mt-2"
             data-aos="zoom-in"
             data-aos-delay="500"
           >

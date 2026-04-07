@@ -1,41 +1,30 @@
 import { GraduationCap, Briefcase } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const Timeline = () => {
-  const experiences = [
-    {
-      year: "2025 - Sekarang",
-      title: "Junior Front End Developer",
-      company: "Open to Work (Eksplorasi Mandiri)",
-      description:
-        "Terus belajar dan mengeksplorasi pembuatan website modern secara otodidak (React, Tailwind, TypeScript). Bersamaan dengan itu, saat ini saya sangat aktif mencari peluang untuk memberikan kontribusi nyata melalui pekerjaan Full-Time maupun Freelance.",
-      type: "experience",
-    },
-    {
-      year: "2021 - 2025",
-      title: "S1 Pendidikan Teknologi Informasi",
-      company: "Universitas Pendidikan Mandalika",
-      description:
-        "Mempelajari perpaduan antara ilmu pedagogi (pendidikan) dan Teknologi Informasi. Latar belakang ini melatih kemampuan komunikasi (public speaking), mentoring, dan kemudahan dalam mencerna serta menyampaikan materi teknis yang rumit kepada tim.",
-      type: "education",
-    },
-    {
-      year: "2017 - 2020",
-      title: "Desain Pemodelan & Informasi Bangunan",
-      company: "SMKN 2 Kuripan",
-      description:
-        "Mempelajari fondasi desain, arsitektur, dan presisi tata letak bangunan. Pengalaman visual dan struktural ini menjadi bekal berharga saat beralih merancang struktur dan 'arsitektur' antarmuka website modern (UI/UX).",
-      type: "education",
-    },
-  ];
+  const { t } = useLanguage();
+
+  const experiences = t("timeline.items") as {
+    year: string;
+    title: string;
+    company: string;
+    description: string;
+  }[];
+
+  // We map the type explicitly here to keep styling intact based on index
+  const typedExperiences = experiences.map((item, index) => ({
+    ...item,
+    type: index === 0 ? "experience" : "education",
+  }));
 
   return (
     <div className="w-full mt-16 mb-10">
       <h3 className="text-xl font-bold bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent mb-12 md:text-2xl text-center md:text-left inline-block">
-        Perjalanan Saya (Timeline)
+        {t("timeline.title")}
       </h3>
 
       <div className="relative border-l-2 border-slate-700/50 pl-6 md:pl-8 ml-4 md:ml-0 space-y-12">
-        {experiences.map((item, index) => (
+        {typedExperiences.map((item, index) => (
           <div key={index} className="relative group">
             {/* Timeline Dot */}
             <div

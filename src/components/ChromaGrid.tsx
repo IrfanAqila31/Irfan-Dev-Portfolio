@@ -6,6 +6,7 @@ import SaaS from "../assets/demo/Saas.webp";
 import BelanjaPintar from "../assets/demo/belanja-pintar.webp";
 import { ChevronDown } from "lucide-react";
 import DompetKu from "../assets/demo/dompetku.webp";
+import { useLanguage } from "../context/LanguageContext";
 
 export interface ChromaItem {
   image: string;
@@ -38,6 +39,7 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   fadeOut = 0.6,
   ease = "power3.out",
 }) => {
+  const { t } = useLanguage();
   const rootRef = useRef<HTMLDivElement>(null);
   const fadeRef = useRef<HTMLDivElement>(null);
   const setX = useRef<SetterFn | null>(null);
@@ -47,11 +49,9 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
   const demo: ChromaItem[] = [
     {
       image: PersonalWeb,
-      title: "Personal Portfolio",
-      subtitle:
-        "Portofolio yang menampilkan proyek dan keahlian pengembangan web saya.",
-      longDescription:
-        "Sebuah website portofolio sederhana tapi terlihat modern yang dibangun dengan Tailwind CSS. Menampilkan desain responsif, animasi halus menggunakan aos.",
+      title: t("project.items")[0]?.title || "Personal Portfolio",
+      subtitle: t("project.items")[0]?.subtitle || "",
+      longDescription: t("project.items")[0]?.longDescription || "",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -59,11 +59,9 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     },
     {
       image: SaaS,
-      title: "SaaS Landing Page",
-      subtitle:
-        "Landing page SaaS bersih dan responsif dengan desain antarmuka modern",
-      longDescription:
-        "Dashboard SaaS dengan fokus pada UX yang bersih. Menggunakan arsitektur komponen modular untuk memudahkan skalabilitas dan kustomisasi tema terang yang premium.",
+      title: t("project.items")[1]?.title || "SaaS Landing Page",
+      subtitle: t("project.items")[1]?.subtitle || "",
+      longDescription: t("project.items")[1]?.longDescription || "",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -71,11 +69,9 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     },
     {
       image: LuminaAI,
-      title: "Lumina AI ",
-      subtitle:
-        "Aplikasi chat berbasis AI dirancang dengan React, TypeScript, dan Tailwind",
-      longDescription:
-        "Antarmuka chat kecerdasan buatan yang interaktif. Menerapkan manajemen state yang kompleks, streaming response, dan desain futuristik dengan efek glassmorphism.",
+      title: t("project.items")[2]?.title || "Lumina AI",
+      subtitle: t("project.items")[2]?.subtitle || "",
+      longDescription: t("project.items")[2]?.longDescription || "",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -83,11 +79,9 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     },
     {
       image: BelanjaPintar,
-      title: "Belanja Pintar ",
-      subtitle:
-        "Kelola daftar belanja harian dengan cerdas, cepat, rapi, dan terorganisir baik",
-      longDescription:
-        "Asisten belanja cerdas yang mengintegrasikan AI untuk membantu menemukan bahan masakan secara otomatis hanya dengan memasukkan nama hidangan. Dilengkapi dengan dashboard progres real-time, kategorisasi otomatis, dan manajemen daftar belanja yang intuitif untuk pengalaman yang lebih efisien.",
+      title: t("project.items")[3]?.title || "Belanja Pintar",
+      subtitle: t("project.items")[3]?.subtitle || "",
+      longDescription: t("project.items")[3]?.longDescription || "",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -95,11 +89,9 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     },
     {
       image: DompetKu,
-      title: "DompetKu ",
-      subtitle:
-        "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif",
-      longDescription:
-        "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif. Dilengkapi dengan fitur-fitur seperti pencatatan pengeluaran, pemasukan, dan laporan keuangan yang mudah dipahami.",
+      title: t("project.items")[4]?.title || "DompetKu",
+      subtitle: t("project.items")[4]?.subtitle || "",
+      longDescription: t("project.items")[4]?.longDescription || "",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",

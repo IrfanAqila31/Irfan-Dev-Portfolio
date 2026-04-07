@@ -1,4 +1,5 @@
 import { ExternalLink, Award, BookOpen } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 // Import images
 import aiSertif from "../assets/certificates/belajar-dasar-ai.png";
@@ -8,62 +9,65 @@ import htmlSertif from "../assets/certificates/belajar-html.png";
 import financeSertif from "../assets/certificates/financial-literasi.png";
 import frontendSertif from "../assets/certificates/front-end-pemula.png";
 
-const certificates = [
-  {
-    title: "Dasar-Dasar Kecerdasan Buatan (AI)",
-    issuer: "Dicoding Indonesia",
-    image: aiSertif,
-    pdf: "/certificates/Sertifikat-Belajar-AI.pdf",
-    category: "AI & Data",
-  },
-  {
-    title: "Pengembangan Web Front-End (Tingkat Pemula)",
-    issuer: "Dicoding Indonesia",
-    image: frontendSertif,
-    pdf: "/certificates/Sertifikat-FrontEnd.pdf",
-    category: "Front-End",
-  },
-  {
-    title: "Teknik Desain & Tata Letak Web (CSS)",
-    issuer: "Codepolitan",
-    image: cssSertif,
-    pdf: "/certificates/Sertifikat-CSS.pdf",
-    category: "Front-End",
-  },
-  {
-    title: "Struktur Fondasi Web dengan HTML",
-    issuer: "Codepolitan",
-    image: htmlSertif,
-    pdf: "/certificates/Sertifikat-HTML.pdf",
-    category: "Front-End",
-  },
-  {
-    title: "Desain Antarmuka Responsif (Bootstrap)",
-    issuer: "Codepolitan",
-    image: bootstrapSertif,
-    pdf: "/certificates/Sertifikat-Bootstrap.pdf",
-    category: "UI Framework",
-  },
-  {
-    title: "Literasi Keuangan & Manajemen Sumber Daya",
-    issuer: "Dicoding Indonesia",
-    image: financeSertif,
-    pdf: "/certificates/Sertifikat-Financial-Literacy.pdf",
-    category: "Edukasi Umum",
-  },
-];
-
 const CertificateGallery = () => {
+  const { t } = useLanguage();
+
+  const certificatesText = t("certificate.items") as { title: string; issuer: string }[];
+  
+  const certificates = [
+    {
+      title: certificatesText[0]?.title || "Dasar-Dasar Kecerdasan Buatan (AI)",
+      issuer: certificatesText[0]?.issuer || "Dicoding Indonesia",
+      image: aiSertif,
+      pdf: "/certificates/Sertifikat-Belajar-AI.pdf",
+      category: t("certificate.categories.aiData"),
+    },
+    {
+      title: certificatesText[1]?.title || "Pengembangan Web Front-End (Tingkat Pemula)",
+      issuer: certificatesText[1]?.issuer || "Dicoding Indonesia",
+      image: frontendSertif,
+      pdf: "/certificates/Sertifikat-FrontEnd.pdf",
+      category: t("certificate.categories.frontEnd"),
+    },
+    {
+      title: certificatesText[2]?.title || "Teknik Desain & Tata Letak Web (CSS)",
+      issuer: certificatesText[2]?.issuer || "Codepolitan",
+      image: cssSertif,
+      pdf: "/certificates/Sertifikat-CSS.pdf",
+      category: t("certificate.categories.frontEnd"),
+    },
+    {
+      title: certificatesText[3]?.title || "Struktur Fondasi Web dengan HTML",
+      issuer: certificatesText[3]?.issuer || "Codepolitan",
+      image: htmlSertif,
+      pdf: "/certificates/Sertifikat-HTML.pdf",
+      category: t("certificate.categories.frontEnd"),
+    },
+    {
+      title: certificatesText[4]?.title || "Desain Antarmuka Responsif (Bootstrap)",
+      issuer: certificatesText[4]?.issuer || "Codepolitan",
+      image: bootstrapSertif,
+      pdf: "/certificates/Sertifikat-Bootstrap.pdf",
+      category: t("certificate.categories.uiFramework"),
+    },
+    {
+      title: certificatesText[5]?.title || "Literasi Keuangan & Manajemen Sumber Daya",
+      issuer: certificatesText[5]?.issuer || "Dicoding Indonesia",
+      image: financeSertif,
+      pdf: "/certificates/Sertifikat-Financial-Literacy.pdf",
+      category: t("certificate.categories.generalEdu"),
+    },
+  ];
+
   return (
     <div className="mt-20 pb-20">
       <div className="text-center mb-12" data-aos="fade-up">
         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
           <Award className="w-8 h-8 text-indigo-500" />
-          Achievements & Certifications
+          {t("certificate.title")}
         </h3>
         <p className="text-slate-400 max-w-2xl mx-auto">
-          Bukti dedikasi saya dalam mempelajari teknologi terbaru dan memperkuat
-          fondasi pemrograman saya melalui kursus bersertifikasi.
+          {t("certificate.subtitle")}
         </p>
       </div>
 
@@ -91,7 +95,7 @@ const CertificateGallery = () => {
                     className="bg-white text-indigo-900 px-4 py-2 rounded-lg font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 hover:bg-indigo-50"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    View PDF
+                    {t("certificate.viewPdf")}
                   </a>
                 </div>
                 {/* Category Badge */}
@@ -111,7 +115,7 @@ const CertificateGallery = () => {
                   </h4>
                 </div>
                 <p className="text-slate-400 text-xs mt-auto">
-                  Issued by{" "}
+                  {t("certificate.issuedBy")}{" "}
                   <span className="text-slate-300 font-medium">
                     {cert.issuer}
                   </span>

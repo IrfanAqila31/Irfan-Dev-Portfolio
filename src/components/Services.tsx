@@ -1,36 +1,39 @@
 import { Monitor, Palette, Zap } from "lucide-react";
-
-const services = [
-  {
-    title: "Frontend Development",
-    description: "Membangun antarmuka web yang responsif, cepat, dan interaktif menggunakan React.js dan Tailwind CSS.",
-    icon: <Monitor className="w-8 h-8 text-blue-400" />,
-    color: "from-blue-500 to-indigo-500",
-  },
-  {
-    title: "UI/UX Design Implementation",
-    description: "Mengubah desain Figma menjadi kode yang presisi, dengan fokus pada pengalaman pengguna yang mulus.",
-    icon: <Palette className="w-8 h-8 text-pink-400" />,
-    color: "from-pink-500 to-rose-500",
-  },
-  {
-    title: "Performance Optimization",
-    description: "Memastikan website memiliki performa terbaik, waktu muat cepat, dan SEO-friendly.",
-    icon: <Zap className="w-8 h-8 text-amber-400" />,
-    color: "from-amber-400 to-orange-500",
-  },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 const Services = () => {
+  const { t } = useLanguage();
+
+  const services = [
+    {
+      title: t("services.item0.title"),
+      description: t("services.item0.desc"),
+      icon: <Monitor className="w-8 h-8 text-blue-400" />,
+      color: "from-blue-500 to-indigo-500",
+    },
+    {
+      title: t("services.item1.title"),
+      description: t("services.item1.desc"),
+      icon: <Palette className="w-8 h-8 text-pink-400" />,
+      color: "from-pink-500 to-rose-500",
+    },
+    {
+      title: t("services.item2.title"),
+      description: t("services.item2.desc"),
+      icon: <Zap className="w-8 h-8 text-amber-400" />,
+      color: "from-amber-400 to-orange-500",
+    },
+  ];
+
   return (
     <section id="services" className="pt-26 pb-26 bg-transparent">
       <div className="container mx-auto px-5">
         <div className="text-center mb-16" data-aos="fade-up">
           <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold text-2xl md:text-3xl lg:text-4xl mb-3 inline-block">
-            What I Do
+            {t("services.title")}
           </h4>
           <p className="font-medium text-sm md:text-lg text-slate-400 max-w-2xl mx-auto">
-            Saya mengombinasikan kode yang rapi dengan desain yang estetik untuk menciptakan solusi digital terbaik.
+            {t("services.subtitle")}
           </p>
         </div>
 

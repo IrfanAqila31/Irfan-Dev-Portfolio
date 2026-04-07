@@ -1,8 +1,11 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useLanguage } from "../context/LanguageContext";
 
 const ContactPage = () => {
   const [loading, setLoading] = useState(false);
+  const { t } = useLanguage();
+
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -32,7 +35,7 @@ const ContactPage = () => {
         },
       );
 
-      toast.success("Pesan berhasil dikirim! 🎉", {
+      toast.success(t("contact.successMsg"), {
         duration: 4000,
         style: {
           background: "rgba(15, 23, 42, 0.9)",
@@ -51,7 +54,7 @@ const ContactPage = () => {
       form.reset();
     } catch (error) {
       console.error(error);
-      toast.error("Gagal mengirim pesan. Coba lagi nanti 😞", {
+      toast.error(t("contact.errorMsg"), {
         duration: 4000,
         style: {
           background: "rgba(15, 23, 42, 0.9)",
@@ -82,13 +85,12 @@ const ContactPage = () => {
             >
               <div>
                 <h4 className="bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent pb-1 font-bold text-2xl md:text-3xl lg:text-4xl mb-3 inline-block">
-                  Contact
+                  {t("contact.title")}
                 </h4>
               </div>
               <div>
                 <p className="font-medium text-sm md:text-lg text-slate-400">
-                  Jangan cuma liatin aja, hubungi saya dong! Siapa tahu obrolan
-                  santai kita berujung jadi website kece😎.
+                  {t("contact.subtitle")}
                 </p>
               </div>
             </div>
@@ -112,13 +114,13 @@ const ContactPage = () => {
                     htmlFor="name"
                     className="block text-sm font-medium text-slate-300 mb-2"
                   >
-                    Nama Lengkap
+                    {t("contact.nameLabel")}
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
-                    placeholder="Masukkan Nama Anda"
+                    placeholder={t("contact.namePlaceholder")}
                     required
                     className="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all duration-300 shadow-inner"
                   />
@@ -130,13 +132,13 @@ const ContactPage = () => {
                     htmlFor="email"
                     className="block text-sm font-medium text-slate-300 mb-2"
                   >
-                    Alamat Email
+                    {t("contact.emailLabel")}
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Masukkan Email Anda"
+                    placeholder={t("contact.emailPlaceholder")}
                     required
                     className="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all duration-300 shadow-inner"
                   />
@@ -148,12 +150,12 @@ const ContactPage = () => {
                     htmlFor="message"
                     className="block text-sm font-medium text-slate-300 mb-2"
                   >
-                    Pesan Anda
+                    {t("contact.messageLabel")}
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    placeholder="Masukkan Pesan Anda"
+                    placeholder={t("contact.messagePlaceholder")}
                     required
                     className="w-full p-4 rounded-xl bg-slate-800/50 border border-slate-700/60 text-slate-200 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-400 transition-all duration-300 h-36 resize-none shadow-inner"
                   ></textarea>
@@ -191,10 +193,10 @@ const ContactPage = () => {
                               d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                             ></path>
                           </svg>
-                          Mengirim...
+                          {t("contact.sendingBtn")}
                         </>
                       ) : (
-                        "Kirim Pesan"
+                        t("contact.sendBtn")
                       )}
                     </span>
                   </button>

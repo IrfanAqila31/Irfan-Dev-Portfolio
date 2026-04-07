@@ -1,17 +1,20 @@
 import { CodeXml, Wrench } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
 const TechStackGrid = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="w-full mt-10">
       <h3 className="text-xl font-bold bg-linear-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent mb-6 md:text-2xl inline-block">
-        Keahlian
+        {t("techStack.title")}
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* teknologi web */}
         <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-indigo-500/50 hover:bg-slate-800/50 transition-all duration-300 relative overflow-hidden group">
           <div className="absolute -top-10 -right-10 w-32 h-32 bg-indigo-500/10 blur-3xl rounded-full pointer-events-none group-hover:bg-indigo-500/20 transition-all duration-500"></div>
           <h4 className="text-lg font-semibold text-slate-100 mb-4 flex items-center gap-2">
-            <CodeXml className="w-5 h-5 text-indigo-400" /> Teknologi Web
+            <CodeXml className="w-5 h-5 text-indigo-400" /> {t("techStack.webTech")}
           </h4>
           <div className="flex flex-wrap gap-3 relative z-10">
             {[
@@ -38,7 +41,7 @@ const TechStackGrid = () => {
         <div className="p-6 md:p-8 rounded-3xl bg-slate-900/40 border border-slate-700/50 shadow-2xl backdrop-blur-md hover:border-emerald-500/50 hover:bg-slate-800/50 transition-all duration-300 relative overflow-hidden group">
           <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-emerald-500/10 blur-3xl rounded-full pointer-events-none group-hover:bg-emerald-500/20 transition-all duration-500"></div>
           <h4 className="text-lg font-semibold text-slate-100 mb-4 flex items-center gap-2">
-            <Wrench className="w-5 h-5 text-emerald-400" /> Alat & Platform
+            <Wrench className="w-5 h-5 text-emerald-400" /> {t("techStack.toolsPlatform")}
           </h4>
           <div className="flex flex-wrap gap-3 relative z-10">
             {["Figma", "Vite", "GitHub", "Vercel"].map((skill) => (
