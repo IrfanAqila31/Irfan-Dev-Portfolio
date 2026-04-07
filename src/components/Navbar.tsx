@@ -6,7 +6,7 @@ export default function Navbar() {
   const { language, toggleLanguage, t } = useLanguage();
 
   return (
-    <nav className="w-full flex justify-center pt-2 px-4 fixed z-30">
+    <nav className="fixed top-0 left-0 w-full flex justify-center pt-2 px-4 z-30 transition-all duration-300">
       {/* Layar transparan (Overlay) untuk  menangkap klik di luar menu */}
       <div
         className={`fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-500 lg:hidden -z-10 ${
@@ -81,13 +81,13 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`absolute top-24 w-full max-w-5xl px-4 lg:hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] origin-top ${
+        className={`absolute top-20 left-0 w-full flex justify-center px-4 lg:hidden transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] origin-top ${
           isOpen
             ? "translate-y-0 scale-100 opacity-100 pointer-events-auto"
-            : "-translate-y-6 scale-95 opacity-0 pointer-events-none"
+            : "-translate-y-4 scale-95 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="bg-slate-900/80 backdrop-blur-2xl border border-slate-700/50 text-slate-200 shadow-2xl shadow-indigo-500/10 rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
+        <div className="w-full max-w-6xl bg-slate-900/90 backdrop-blur-2xl border border-slate-700/50 text-slate-200 shadow-2xl shadow-indigo-500/10 rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#home" onClick={() => setIsOpen(false)}>
               {t("nav.home")}
