@@ -4,11 +4,24 @@ import InatagramIcon from "../components/InstagramIcon";
 import GithubIcon from "../components/GithubIcon";
 import TechMarquee from "../components/TechMarquee";
 import { TypeAnimation } from "react-type-animation";
+import { useState, useEffect, useRef } from "react";
 import { MessageCircle, Download, ChevronDown } from "lucide-react";
 import { useLanguage } from "../context/LanguageContext";
 
 const HomePage = () => {
   const { t, language } = useLanguage();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="w-full">
@@ -75,15 +88,24 @@ const HomePage = () => {
             </a>
 
             {/* CV Download Group */}
-            <div className="relative group w-full sm:w-auto">
+            <div className="relative w-full sm:w-auto" ref={dropdownRef}>
               <button
-                className="w-full sm:w-auto px-6 py-3 rounded-full text-slate-300 border border-slate-600 group-hover:border-indigo-400 group-hover:text-indigo-300 group-hover:bg-slate-800/60 transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className={`w-full sm:w-auto px-6 py-3 rounded-full text-slate-300 border transition font-medium duration-300 lg:text-md flex items-center justify-center gap-2 shadow-sm ${
+                  isDropdownOpen 
+                    ? "border-indigo-400 text-indigo-300 bg-slate-800/60" 
+                    : "border-slate-600 hover:border-indigo-400 hover:text-indigo-300 hover:bg-slate-800/60"
+                }`}
               >
-                <Download className="w-5 h-5" /> {t("home.cvBtn")} <ChevronDown className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" />
+                <Download className="w-5 h-5" /> {t("home.cvBtn")} <ChevronDown className={`w-4 h-4 ml-1 transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : ""}`} />
               </button>
 
-              {/* Dropdown Menu Wrapper (pt-2 prevents hover loss) */}
-              <div className="absolute left-0 top-full pt-2 w-full md:w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 transform origin-top translate-y-[-10px] group-hover:translate-y-0">
+              {/* Dropdown Menu Wrapper */}
+              <div className={`absolute left-0 top-full pt-2 w-full sm:w-56 transition-all duration-300 z-50 transform origin-top ${
+                isDropdownOpen
+                  ? "opacity-100 visible translate-y-0"
+                  : "opacity-0 invisible translate-y-[-10px]"
+              }`}>
                 {/* Solid Background Card */}
                 <div className="bg-slate-900 border border-slate-600 rounded-2xl shadow-2xl shadow-black overflow-hidden relative z-50">
                   <div className="flex flex-col py-2">
