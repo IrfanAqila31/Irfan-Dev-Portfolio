@@ -1,9 +1,7 @@
 import { useState } from "react";
-import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, toggleLanguage, t } = useLanguage();
 
   return (
     <nav className="fixed top-0 left-0 w-full flex justify-center pt-2 px-4 z-30 transition-all duration-300">
@@ -28,37 +26,27 @@ export default function Navbar() {
           {/* Desktop Menu */}
           <ul className="hidden lg:flex gap-6 xl:gap-8 font-medium text-slate-200">
             <li className="hover:text-white transition duration-300 cursor-pointer text-sm xl:text-base">
-              <a href="#home">{t("nav.home")}</a>
+              <a href="#home">Beranda</a>
             </li>
             <li className="hover:text-white transition duration-300 cursor-pointer text-sm xl:text-base">
-              <a href="#about">{t("nav.about")}</a>
+              <a href="#about">Tentang Saya</a>
             </li>
             <li className="hover:text-white transition duration-300 cursor-pointer text-sm xl:text-base">
-              <a href="#services">{t("nav.services")}</a>
+              <a href="#services">Layanan</a>
             </li>
             <li className="hover:text-white transition duration-300 cursor-pointer text-sm xl:text-base">
-              <a href="#project">{t("nav.project")}</a>
+              <a href="#project">Proyek</a>
             </li>
             <li className="hover:text-white transition duration-300 cursor-pointer text-sm xl:text-base">
-              <a href="#faq">{t("nav.faq")}</a>
+              <a href="#faq">FAQ</a>
             </li>
             <li className="hover:text-white transition duration-300 cursor-pointer text-sm xl:text-base">
-              <a href="#contact">{t("nav.contact")}</a>
+              <a href="#contact">Kontak</a>
             </li>
           </ul>
 
-          {/* Action Area: Language Toggle & Mobile Button */}
+          {/* Mobile Button */}
           <div className="flex items-center gap-3">
-            {/* Language Toggle */}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center justify-center px-3 py-1 text-xs font-semibold text-slate-300 bg-slate-800/50 hover:bg-slate-700/50 rounded-full border border-slate-600 transition-all duration-300 cursor-pointer hover:border-indigo-500"
-              aria-label="Toggle Language"
-            >
-              {language.toUpperCase()}
-            </button>
-
-            {/* Mobile Button */}
             <div className="lg:hidden">
               <button
                 className="flex flex-col justify-center items-center gap-1.5 w-8 h-8 cursor-pointer focus:outline-none"
@@ -90,32 +78,32 @@ export default function Navbar() {
         <div className="w-full max-w-6xl bg-slate-900/90 backdrop-blur-2xl border border-slate-700/50 text-slate-200 shadow-2xl shadow-indigo-500/10 rounded-3xl py-6 flex flex-col items-center gap-6 font-medium">
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#home" onClick={() => setIsOpen(false)}>
-              {t("nav.home")}
+              Beranda
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#about" onClick={() => setIsOpen(false)}>
-              {t("nav.about")}
+              Tentang Saya
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#services" onClick={() => setIsOpen(false)}>
-              {t("nav.services")}
+              Layanan
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#project" onClick={() => setIsOpen(false)}>
-              {t("nav.project")}
+              Proyek
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#faq" onClick={() => setIsOpen(false)}>
-              {t("nav.faq")}
+              FAQ
             </a>
           </span>
           <span className="hover:text-white transition duration-300 cursor-pointer">
             <a href="#contact" onClick={() => setIsOpen(false)}>
-              {t("nav.contact")}
+              Kontak
             </a>
           </span>
         </div>

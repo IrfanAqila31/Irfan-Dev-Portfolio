@@ -1,5 +1,4 @@
 import { ExternalLink, Award, BookOpen } from "lucide-react";
-import { useLanguage } from "../context/LanguageContext";
 
 // Import images
 import aiSertif from "../assets/certificates/belajar-dasar-ai.png";
@@ -10,52 +9,48 @@ import financeSertif from "../assets/certificates/financial-literasi.png";
 import frontendSertif from "../assets/certificates/front-end-pemula.png";
 
 const CertificateGallery = () => {
-  const { t } = useLanguage();
-
-  const certificatesText = t("certificate.items") as { title: string; issuer: string }[];
-  
   const certificates = [
     {
-      title: certificatesText[0]?.title || "Dasar-Dasar Kecerdasan Buatan (AI)",
-      issuer: certificatesText[0]?.issuer || "Dicoding Indonesia",
+      title: "Dasar-Dasar Kecerdasan Buatan (AI)",
+      issuer: "Dicoding Indonesia",
       image: aiSertif,
       pdf: "/certificates/Sertifikat-Belajar-AI.pdf",
-      category: t("certificate.categories.aiData"),
+      category: "AI & Data",
     },
     {
-      title: certificatesText[1]?.title || "Pengembangan Web Front-End (Tingkat Pemula)",
-      issuer: certificatesText[1]?.issuer || "Dicoding Indonesia",
+      title: "Pengembangan Web Front-End (Tingkat Pemula)",
+      issuer: "Dicoding Indonesia",
       image: frontendSertif,
       pdf: "/certificates/Sertifikat-FrontEnd.pdf",
-      category: t("certificate.categories.frontEnd"),
+      category: "Front-End",
     },
     {
-      title: certificatesText[2]?.title || "Teknik Desain & Tata Letak Web (CSS)",
-      issuer: certificatesText[2]?.issuer || "Codepolitan",
+      title: "Teknik Desain & Tata Letak Web (CSS)",
+      issuer: "Codepolitan",
       image: cssSertif,
       pdf: "/certificates/Sertifikat-CSS.pdf",
-      category: t("certificate.categories.frontEnd"),
+      category: "Front-End",
     },
     {
-      title: certificatesText[3]?.title || "Struktur Fondasi Web dengan HTML",
-      issuer: certificatesText[3]?.issuer || "Codepolitan",
+      title: "Struktur Fondasi Web dengan HTML",
+      issuer: "Codepolitan",
       image: htmlSertif,
       pdf: "/certificates/Sertifikat-HTML.pdf",
-      category: t("certificate.categories.frontEnd"),
+      category: "Front-End",
     },
     {
-      title: certificatesText[4]?.title || "Desain Antarmuka Responsif (Bootstrap)",
-      issuer: certificatesText[4]?.issuer || "Codepolitan",
+      title: "Desain Antarmuka Responsif (Bootstrap)",
+      issuer: "Codepolitan",
       image: bootstrapSertif,
       pdf: "/certificates/Sertifikat-Bootstrap.pdf",
-      category: t("certificate.categories.uiFramework"),
+      category: "UI Framework",
     },
     {
-      title: certificatesText[5]?.title || "Literasi Keuangan & Manajemen Sumber Daya",
-      issuer: certificatesText[5]?.issuer || "Dicoding Indonesia",
+      title: "Literasi Keuangan & Manajemen Sumber Daya",
+      issuer: "Dicoding Indonesia",
       image: financeSertif,
       pdf: "/certificates/Sertifikat-Financial-Literacy.pdf",
-      category: t("certificate.categories.generalEdu"),
+      category: "Edukasi Umum",
     },
   ];
 
@@ -64,10 +59,10 @@ const CertificateGallery = () => {
       <div className="text-center mb-12" data-aos="fade-up">
         <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 flex items-center justify-center gap-3">
           <Award className="w-8 h-8 text-indigo-500" />
-          {t("certificate.title")}
+          Penghargaan & Sertifikasi
         </h3>
         <p className="text-slate-400 max-w-2xl mx-auto">
-          {t("certificate.subtitle")}
+          Bukti dedikasi saya dalam mempelajari teknologi terbaru dan memperkuat fondasi pemrograman saya melalui kursus bersertifikasi.
         </p>
       </div>
 
@@ -95,7 +90,7 @@ const CertificateGallery = () => {
                     className="bg-white text-indigo-900 px-4 py-2 rounded-lg font-bold flex items-center gap-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 hover:bg-indigo-50"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    {t("certificate.viewPdf")}
+                    Lihat PDF
                   </a>
                 </div>
                 {/* Category Badge */}
@@ -115,7 +110,7 @@ const CertificateGallery = () => {
                   </h4>
                 </div>
                 <p className="text-slate-400 text-xs mt-auto">
-                  {t("certificate.issuedBy")}{" "}
+                  Diterbitkan oleh{" "}
                   <span className="text-slate-300 font-medium">
                     {cert.issuer}
                   </span>

@@ -1,8 +1,5 @@
-import { useLanguage } from "../context/LanguageContext";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { t } = useLanguage();
 
   return (
     <>
@@ -19,10 +16,10 @@ const Footer = () => {
                 Irfan Aqila Utama
               </h2>
               <p className="text-indigo-400 text-sm font-medium mb-4">
-                {t("about.profileTitle")} 🚀
+                Pengembang Front-End Junior 🚀
               </p>
               <h3 className="font-semibold text-base mb-1 text-slate-400">
-                {t("footer.contactTitle")}
+                Hubungi Saya
               </h3>
               <p className="text-slate-400 text-sm">irfanaqila31@gmail.com</p>
             </div>
@@ -34,7 +31,7 @@ const Footer = () => {
               data-aos-delay="200"
             >
               <h3 className="font-bold text-base text-slate-300 mb-4">
-                {t("footer.linksTitle")}
+                Tautan
               </h3>
               <ul className="text-slate-400 space-y-2 text-sm">
                 <li>
@@ -42,7 +39,7 @@ const Footer = () => {
                     href="#home"
                     className="hover:text-indigo-400 transition-colors duration-200"
                   >
-                    {t("nav.home")}
+                    Beranda
                   </a>
                 </li>
                 <li>
@@ -50,7 +47,7 @@ const Footer = () => {
                     href="#about"
                     className="hover:text-indigo-400 transition-colors duration-200"
                   >
-                    {t("nav.about")}
+                    Tentang Saya
                   </a>
                 </li>
                 <li>
@@ -58,7 +55,7 @@ const Footer = () => {
                     href="#project"
                     className="hover:text-indigo-400 transition-colors duration-200"
                   >
-                    {t("nav.project")}
+                    Proyek
                   </a>
                 </li>
                 <li>
@@ -66,7 +63,7 @@ const Footer = () => {
                     href="#contact"
                     className="hover:text-indigo-400 transition-colors duration-200"
                   >
-                    {t("nav.contact")}
+                    Kontak
                   </a>
                 </li>
               </ul>
@@ -79,7 +76,7 @@ const Footer = () => {
               data-aos-delay="300"
             >
               <h3 className="font-bold text-base text-slate-300 mb-4">
-                {t("footer.socialTitle")}
+                Sosial Media
               </h3>
               <ul className="text-slate-400 space-y-2 text-sm">
                 <li>
@@ -155,7 +152,7 @@ const Footer = () => {
               >
                 Irfan Aqila Utama
               </a>
-              . {t("footer.rights")}
+              . All rights reserved.
             </p>
           </div>
         </div>
