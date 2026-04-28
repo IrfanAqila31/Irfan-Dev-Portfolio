@@ -7,6 +7,8 @@ import cssSertif from "../assets/certificates/belajar-dasar-css.png";
 import htmlSertif from "../assets/certificates/belajar-html.png";
 import financeSertif from "../assets/certificates/financial-literasi.png";
 import frontendSertif from "../assets/certificates/front-end-pemula.png";
+import pemrogramanWebSertif from "../assets/certificates/dasar-pemrograman-web.png";
+import specDrivenSertif from "../assets/certificates/spec-driven-development-kiro.png";
 
 const CertificateGallery = () => {
   const certificates = [
@@ -52,6 +54,20 @@ const CertificateGallery = () => {
       pdf: "/certificates/Sertifikat-Financial-Literacy.pdf",
       category: "Edukasi Umum",
     },
+    {
+      title: "Spec-Driven Development dengan Kiro",
+      issuer: "Dicoding Indonesia",
+      image: specDrivenSertif,
+      pdf: "/certificates/Sertifikat-Spec-Driven-dengan-kiro.pdf",
+      category: "AI & Tools",
+    },
+    {
+      title: "Dasar Pemrograman Web",
+      issuer: "Dicoding Indonesia",
+      image: pemrogramanWebSertif,
+      pdf: "/certificates/Sertifikat-Dasar-Pemrograman-Web.pdf",
+      category: "Front-End",
+    },
   ];
 
   return (
@@ -62,7 +78,8 @@ const CertificateGallery = () => {
           Penghargaan & Sertifikasi
         </h3>
         <p className="text-slate-400 max-w-2xl mx-auto">
-          Bukti dedikasi saya dalam mempelajari teknologi terbaru dan memperkuat fondasi pemrograman saya melalui kursus bersertifikasi.
+          Bukti dedikasi saya dalam mempelajari teknologi terbaru dan memperkuat
+          fondasi pemrograman saya melalui kursus bersertifikasi.
         </p>
       </div>
 

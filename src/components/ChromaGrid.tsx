@@ -6,6 +6,7 @@ import SaaS from "../assets/demo/Saas.webp";
 import BelanjaPintar from "../assets/demo/belanja-pintar.webp";
 import { ChevronDown } from "lucide-react";
 import DompetKu from "../assets/demo/dompetku.webp";
+import PaloraCafe from "../assets/demo/palora-cafe.webp";
 
 export interface ChromaItem {
   image: string;
@@ -94,6 +95,16 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://dompetku-henna.vercel.app/",
+    },
+    {
+      image: PaloraCafe,
+      title: "Palora Cafe",
+      subtitle: "Website pemesanan menu kafe dengan sistem kasir terintegrasi dan desain premium",
+      longDescription: "Website interaktif untuk Palora Cafe yang menampilkan katalog menu lengkap dengan fitur pemesanan langsung. Dilengkapi dengan dashboard kasir real-time, pilihan pembayaran Tunai & QRIS, serta tampilan responsif bertema dark-brown yang elegan.",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://palora-cafe.vercel.app/",
     },
   ];
 
