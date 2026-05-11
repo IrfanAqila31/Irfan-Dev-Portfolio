@@ -9,6 +9,8 @@ import financeSertif from "../assets/certificates/financial-literasi.png";
 import frontendSertif from "../assets/certificates/front-end-pemula.png";
 import pemrogramanWebSertif from "../assets/certificates/dasar-pemrograman-web.png";
 import specDrivenSertif from "../assets/certificates/spec-driven-development-kiro.png";
+import JavascriptDicoding from "../assets/certificates/javascript-dicoding.png";
+import JavascriptCodePolitan from "../assets/certificates/javascript-code-politan.png";
 
 const CertificateGallery = () => {
   const certificates = [
@@ -66,6 +68,20 @@ const CertificateGallery = () => {
       issuer: "Dicoding Indonesia",
       image: pemrogramanWebSertif,
       pdf: "/certificates/Sertifikat-Dasar-Pemrograman-Web.pdf",
+      category: "Front-End",
+    },
+    {
+      title: "Dasar Pemrograman JavaScript",
+      issuer: "Dicoding Indonesia",
+      image: JavascriptDicoding,
+      pdf: "/certificates/Sertifikat-Pemrograman-JavaScript-Dicoding.pdf",
+      category: "Front-End",
+    },
+    {
+      title: "Dasar Pemrograman JavaScript 2",
+      issuer: "Codepolitan",
+      image: JavascriptCodePolitan,
+      pdf: "/certificates/Sertifikat-Pemrograman-JavaScript-Code-Politan.pdf",
       category: "Front-End",
     },
   ];

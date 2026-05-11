@@ -7,6 +7,7 @@ import BelanjaPintar from "../assets/demo/belanja-pintar.webp";
 import { ChevronDown } from "lucide-react";
 import DompetKu from "../assets/demo/dompetku.webp";
 import PaloraCafe from "../assets/demo/palora-cafe.webp";
+import JusBuah from "../assets/demo/jus-buah.webp";
 
 export interface ChromaItem {
   image: string;
@@ -49,8 +50,10 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: PersonalWeb,
       title: "Portofolio Pribadi",
-      subtitle: "Portofolio yang menampilkan proyek dan keahlian pengembangan web saya.",
-      longDescription: "Sebuah website portofolio sederhana tapi terlihat modern yang dibangun dengan Tailwind CSS. Menampilkan desain responsif, animasi halus menggunakan AOS.",
+      subtitle:
+        "Portofolio yang menampilkan proyek dan keahlian pengembangan web saya.",
+      longDescription:
+        "Sebuah website portofolio sederhana tapi terlihat modern yang dibangun dengan Tailwind CSS. Menampilkan desain responsif, animasi halus menggunakan AOS.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -59,8 +62,10 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: SaaS,
       title: "Landing Page SaaS",
-      subtitle: "Landing page SaaS bersih dan responsif dengan desain antarmuka modern",
-      longDescription: "Dashboard SaaS dengan fokus pada UX yang bersih. Menggunakan arsitektur komponen modular untuk memudahkan skalabilitas dan kustomisasi tema terang yang premium.",
+      subtitle:
+        "Landing page SaaS bersih dan responsif dengan desain antarmuka modern",
+      longDescription:
+        "Dashboard SaaS dengan fokus pada UX yang bersih. Menggunakan arsitektur komponen modular untuk memudahkan skalabilitas dan kustomisasi tema terang yang premium.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -69,8 +74,10 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: LuminaAI,
       title: "Lumina AI",
-      subtitle: "Aplikasi chat berbasis AI dirancang dengan React, TypeScript, dan Tailwind",
-      longDescription: "Antarmuka chat kecerdasan buatan yang interaktif. Menerapkan manajemen state yang kompleks, streaming response, dan desain futuristik dengan efek glassmorphism.",
+      subtitle:
+        "Aplikasi chat berbasis AI dirancang dengan React, TypeScript, dan Tailwind",
+      longDescription:
+        "Antarmuka chat kecerdasan buatan yang interaktif. Menerapkan manajemen state yang kompleks, streaming response, dan desain futuristik dengan efek glassmorphism.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -79,8 +86,10 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: BelanjaPintar,
       title: "Belanja Pintar",
-      subtitle: "Kelola daftar belanja harian dengan cerdas, cepat, rapi, dan terorganisir baik",
-      longDescription: "Asisten belanja cerdas yang mengintegrasikan AI untuk membantu menemukan bahan masakan secara otomatis hanya dengan memasukkan nama hidangan. Dilengkapi dengan dashboard progres real-time, kategorisasi otomatis, dan manajemen daftar belanja yang intuitif untuk pengalaman yang lebih efisien.",
+      subtitle:
+        "Kelola daftar belanja harian dengan cerdas, cepat, rapi, dan terorganisir baik",
+      longDescription:
+        "Asisten belanja cerdas yang mengintegrasikan AI untuk membantu menemukan bahan masakan secara otomatis hanya dengan memasukkan nama hidangan. Dilengkapi dengan dashboard progres real-time, kategorisasi otomatis, dan manajemen daftar belanja yang intuitif untuk pengalaman yang lebih efisien.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -89,8 +98,10 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: DompetKu,
       title: "DompetKu",
-      subtitle: "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif",
-      longDescription: "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif. Dilengkapi dengan fitur-fitur seperti pencatatan pengeluaran, pemasukan, dan laporan keuangan yang mudah dipahami.",
+      subtitle:
+        "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif",
+      longDescription:
+        "Aplikasi pencatat keuangan pribadi yang dirancang dengan antarmuka yang modern dan intuitif. Dilengkapi dengan fitur-fitur seperti pencatatan pengeluaran, pemasukan, dan laporan keuangan yang mudah dipahami.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
@@ -99,12 +110,26 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
     {
       image: PaloraCafe,
       title: "Palora Cafe",
-      subtitle: "Website pemesanan menu kafe dengan sistem kasir terintegrasi dan desain premium",
-      longDescription: "Website interaktif untuk Palora Cafe yang menampilkan katalog menu lengkap dengan fitur pemesanan langsung. Dilengkapi dengan dashboard kasir real-time, pilihan pembayaran Tunai & QRIS, serta tampilan responsif bertema dark-brown yang elegan.",
+      subtitle:
+        "Website pemesanan menu kafe dengan sistem kasir terintegrasi dan desain premium",
+      longDescription:
+        "Website interaktif untuk Palora Cafe yang menampilkan katalog menu lengkap dengan fitur pemesanan langsung. Dilengkapi dengan dashboard kasir real-time, pilihan pembayaran Tunai & QRIS, serta tampilan responsif bertema dark-brown yang elegan.",
       handle: "",
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://palora-cafe.vercel.app/",
+    },
+    {
+      image: JusBuah,
+      title: "UMKM Jus Buah",
+      subtitle:
+        "Sistem katalog menu online yang terintegrasi untuk mempercepat proses konversi pelanggan.",
+      longDescription:
+        "Solusi digital komprehensif bagi bisnis minuman yang ingin tampil lebih profesional dan terpercaya. Website ini memadukan desain UI modern dengan fungsionalitas bisnis yang kuat, seperti galeri produk high-definition, manajemen daftar harga yang rapi, dan tombol call-to-action strategis yang dirancang khusus untuk meningkatkan konversi penjualan harian secara signifikan.",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://website-umkm-jus-buah.vercel.app/",
     },
   ];
 
