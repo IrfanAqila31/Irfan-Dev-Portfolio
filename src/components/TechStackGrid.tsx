@@ -17,7 +17,7 @@ const TechStackGrid = () => {
             {[
               "React",
               "React Router",
-              "TypeScript",
+              "Vue.js",
               "JavaScript",
               "HTML",
               "CSS",
