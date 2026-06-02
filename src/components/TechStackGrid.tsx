@@ -15,12 +15,15 @@ const TechStackGrid = () => {
           </h4>
           <div className="flex flex-wrap gap-3 relative z-10">
             {[
-              "React",
-              "React Router",
-              "Vue.js",
-              "JavaScript",
               "HTML",
               "CSS",
+              "JavaScript",
+              "Tailwind",
+              "Bootstrap",
+              "React",
+              "Vue.js",
+              "React Router",
+              "Vue Roter",
               "Axios",
               "Zod",
             ].map((skill) => (

@@ -2,11 +2,12 @@ import html from "../assets/html.svg";
 import css from "../assets/css.svg";
 import js from "../assets/javascript.svg";
 import react from "../assets/react.svg";
-import ts from "../assets/typescript.svg";
+// import ts from "../assets/typescript.svg";
 import tailwind from "../assets/tailwind.svg";
 import bootstrap from "../assets/Bootstrap.svg";
 import figma from "../assets/figma.svg";
 import vite from "../assets/vite.svg";
+import Vue from "../assets/vue.svg"
 
 const icons = [
   { name: "HTML5", src: html },
@@ -16,7 +17,7 @@ const icons = [
   },
   { name: "JavaScript", src: js },
   { name: "React", src: react },
-  { name: "TypeScript", src: ts },
+  { name: "Vue", src: Vue },
   {
     name: "Tailwind CSS",
     src: tailwind,
