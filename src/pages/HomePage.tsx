@@ -34,7 +34,7 @@ const HomePage = () => {
           >
             <TypeAnimation
               sequence={[
-                "Pengembang Front-End Junior",
+                "Junior Front End Developer",
                 2000,
                 "Lulusan Baru",
                 2000,
