@@ -186,8 +186,8 @@
   width: 100%;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%) scale(1);
-  bottom: 2px;
+  transform: translateX(-50%) translateY(10px) scale(1);
+  bottom: -3px;
   opacity: calc(1.75 - var(--pointer-from-center));
 }
 

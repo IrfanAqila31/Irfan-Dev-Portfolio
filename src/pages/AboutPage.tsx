@@ -46,7 +46,7 @@ const AboutPage = () => {
             >
               <ProfileCard
                 name="Irfan Aqila Utama"
-                title="Pengembang Front-End Junior"
+                title="Junior Front End Developer"
                 handle="irfanAqila31"
                 status="Online"
                 contactText="Hubungi Saya"
