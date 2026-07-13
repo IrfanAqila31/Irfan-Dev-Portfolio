@@ -8,6 +8,7 @@ import { ChevronDown } from "lucide-react";
 import DompetKu from "../assets/demo/dompetku.webp";
 import PaloraCafe from "../assets/demo/palora-cafe.webp";
 import JusBuah from "../assets/demo/jus-buah.webp";
+import EasyCaption from "../assets/demo/easy-caption.webp";
 
 export interface ChromaItem {
   image: string;
@@ -130,6 +131,18 @@ const ChromaGrid: React.FC<ChromaGridProps> = ({
       borderColor: "#4F46E5",
       gradient: "linear-gradient(145deg,#4F46E5,#000)",
       url: "https://website-umkm-jus-buah.vercel.app/",
+    },
+    {
+      image: EasyCaption,
+      title: "Easy Caption",
+      subtitle:
+        "Alat bantu berbasis AI yang dirancang untuk membantu para kreator konten dan pebisnis",
+      longDescription:
+        "EasyCaption adalah alat bantu berbasis AI yang dirancang untuk membantu para kreator konten dan pebisnis dalam menghasilkan caption media sosial yang menarik dan relevan dengan cepat. Dengan antarmuka yang sederhana, EasyCaption memudahkan pengguna untuk membuat caption yang efektif untuk platform seperti TikTok, Youtube, dan Instagram.",
+      handle: "",
+      borderColor: "#4F46E5",
+      gradient: "linear-gradient(145deg,#4F46E5,#000)",
+      url: "https://nexa-web-nine.vercel.app/",
     },
   ];
 

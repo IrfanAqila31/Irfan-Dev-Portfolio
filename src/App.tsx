@@ -48,6 +48,8 @@ function App() {
         <FloatingWA />
         <BackToTop />
         <MusicPlayer />
+      
+
         <Toaster position="top-center" />
       </div>
     </div>

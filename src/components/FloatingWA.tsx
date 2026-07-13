@@ -1,17 +1,15 @@
-
-
 const FloatingWA = () => {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center group">
       {/* Tooltip teks saat hover */}
       <div className="absolute right-full mr-4 px-4 py-2 bg-slate-800 border border-slate-700 text-slate-200 text-sm font-medium rounded-xl shadow-lg opacity-0 translate-x-4 pointer-events-none group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 w-max">
-        Chat via WhatsApp 👋
+        Chat dengan AI Asisten Saya 👋
         <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 border-y-8 border-y-transparent border-l-8 border-l-slate-800"></div>
       </div>
 
-      {/* Bubble */}
+      {/* Bubble (Ganti nomor di wa.me dengan nomor API Meta milikmu) */}
       <a
-        href="https://wa.me/6287795528998"
+        href="https://wa.me/1206643875866591" // <-- GANTI DENGAN NOMOR WA DARI DASBOR META
         target="_blank"
         rel="noreferrer"
         className="w-14 h-14 bg-emerald-500 hover:bg-emerald-400 text-white rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(16,185,129,0.4)] hover:shadow-[0_0_30px_rgba(16,185,129,0.7)] hover:-translate-y-1 transition-all duration-300"
